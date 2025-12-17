@@ -1,8 +1,9 @@
 import { Project, ProjectCard } from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState } from "react";
 import { X } from "lucide-react";
+import Masonry from "react-masonry-css";
 
 interface MosaicGridProps {
   projects: Project[];
@@ -11,10 +12,20 @@ interface MosaicGridProps {
 export function MosaicGrid({ projects }: MosaicGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  const breakpointColumns = {
+    default: 4,
+    1280: 3,
+    768: 2,
+    640: 1
+  };
+
   return (
     <>
-      <div className="w-full min-h-screen px-4 md:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[300px] gap-4 grid-flow-dense">
+      <div className="w-full">
+        <Masonry
+          breakpointCols={breakpointColumns}
+          className="flex -ml-4 w-auto"
+          columnClassName="pl-4 bg-clip-padding">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -22,19 +33,20 @@ export function MosaicGrid({ projects }: MosaicGridProps) {
               onClick={setSelectedProject}
             />
           ))}
-        </div>
+        </Masonry>
       </div>
 
       <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
-        <DialogContent className="max-w-[95vw] md:max-w-6xl p-0 overflow-hidden bg-background border-none gap-0 outline-none">
+        <DialogContent className="max-w-[95vw] md:max-w-6xl p-0 overflow-hidden bg-background border-none gap-0 outline-none" aria-describedby={undefined}>
+          <DialogTitle className="sr-only">{selectedProject?.title || "Project"}</DialogTitle>
           <AnimatePresence>
             {selectedProject && (
               <div className="flex flex-col md:flex-row h-[90vh] md:h-[85vh]">
-                <div className="relative w-full md:w-2/3 h-1/2 md:h-full bg-gray-100">
+                <div className="relative w-full md:w-2/3 h-1/2 md:h-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
                    <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-contain"
                    />
                 </div>
                 
