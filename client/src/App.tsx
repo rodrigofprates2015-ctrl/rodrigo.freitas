@@ -7,11 +7,13 @@ import { ThemeProvider } from "./lib/theme";
 import { LanguageProvider } from "./lib/language";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import ClientDetail from "@/pages/ClientDetail";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/client/:id" component={ClientDetail} />
       <Route component={NotFound} />
     </Switch>
   );

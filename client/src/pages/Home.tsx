@@ -1,124 +1,180 @@
+import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
-import { MosaicGrid } from "@/components/portfolio/MosaicGrid";
-import { Project } from "@/components/portfolio/ProjectCard";
+import { CLIENTS } from "@/data/clients";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/language";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useState, useCallback, useEffect } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
-// BetMGM Assets
-import betmgm1 from "@assets/betmgm_extracted/1.png";
-import betmgmBanner from "@assets/betmgm_extracted/970X250.png";
-import betmgmLibertadores1 from "@assets/betmgm_extracted/FINAL LIBERTADORES_KV1_1080x1920.png";
-import betmgmLibertadores2 from "@assets/betmgm_extracted/FINAL LIBERTADORES_KV2_800x800.png";
-import betmgmFortune from "@assets/betmgm_extracted/FortuneTiger_390x390.png";
-import betmgmOlympus from "@assets/betmgm_extracted/Gates of Olympus_KV 2_1280x720.png";
-import betmgmGoldBlitz from "@assets/betmgm_extracted/Gold Blitz Fortunes_KV1_160x600.png";
-import betmgmKv1 from "@assets/betmgm_extracted/KV1_1080x1920.png";
-import betmgmKv2 from "@assets/betmgm_extracted/KV2_1080x1920.png";
-import betmgmVegas from "@assets/betmgm_extracted/KV_BF_Vegas Friday.png";
-import betmgmViraLata from "@assets/betmgm_extracted/Vira lata caramelo_KV2_160x600.png";
-
-// Avon Assets
-import avonJojoba from "@assets/avon_extracted/Avon_Jojoba_1000x1500.png";
-import avonPotinhos from "@assets/avon_extracted/Avon_potinhos_1000x1500.png";
-import avonSeruns from "@assets/avon_extracted/Avon_seruns_1000x1500.png";
-import avonPotinhosSq from "@assets/avon_extracted/Avon_potinhos_1080x1080.png";
-import avon2 from "@assets/avon_extracted/2.png";
-
-// GetNet Assets
-import getnetInst1Sq from "@assets/getnet_extracted/_institucional kv 1_1080x1080.png";
-import getnetInst1Tall from "@assets/getnet_extracted/_institucional kv 1_1080x1920.png";
-import getnetInst1Wide from "@assets/getnet_extracted/_institucional kv 1_1920x1080.png";
-import getnetInst2Sq from "@assets/getnet_extracted/_institucional kv 2_1080x1080.png";
-import getnetInst2Tall from "@assets/getnet_extracted/_institucional kv 2_1080x1920.png";
-import getnetKv1Sq from "@assets/getnet_extracted/KV1_1080x1080.png";
-import getnetKv1Wide from "@assets/getnet_extracted/KV1_1920x1080.png";
-import getnetKv2Sq from "@assets/getnet_extracted/KV2_1080x1080.png";
-import getnetPoster from "@assets/getnet_extracted/Poster trem.png";
-
-// Audi Assets
-import audiBehance2 from "@assets/audi_extracted/Audi_Behance_02.png";
-import audiBehance3 from "@assets/audi_extracted/Audi_Behance_03.png";
-import audiQ8Wide from "@assets/audi_extracted/AUDI_Q8_Consideracao_1920×320.png";
-import audiQ8Medium from "@assets/audi_extracted/AUDI_Q8_Consideracao_1200×628.png";
-import audiQ8Tall from "@assets/audi_extracted/AUDI_Q8_Consideracao_160x600.png";
-
-const BETMGM_PROJECTS: Project[] = [
-  { id: "betmgm-1", title: "Libertadores KV", category: "Key Visual", year: "2024", image: betmgmLibertadores1 },
-  { id: "betmgm-2", title: "Gates of Olympus", category: "Game Promotion", year: "2024", image: betmgmOlympus },
-  { id: "betmgm-3", title: "Campaign KV 1", category: "Social Media", year: "2024", image: betmgmKv1 },
-  { id: "betmgm-4", title: "Libertadores Social", category: "Social Media", year: "2024", image: betmgmLibertadores2 },
-  { id: "betmgm-5", title: "Fortune Tiger", category: "Game Asset", year: "2024", image: betmgmFortune },
-  { id: "betmgm-6", title: "Vegas Friday", category: "Campaign", year: "2024", image: betmgmVegas },
-  { id: "betmgm-7", title: "Campaign KV 2", category: "Social Media", year: "2024", image: betmgmKv2 },
-  { id: "betmgm-8", title: "Vira Lata Caramelo", category: "Banner Ads", year: "2024", image: betmgmViraLata },
-  { id: "betmgm-9", title: "Gold Blitz", category: "Banner Ads", year: "2024", image: betmgmGoldBlitz },
-  { id: "betmgm-10", title: "Banner 970x250", category: "Digital Ads", year: "2024", image: betmgmBanner },
-  { id: "betmgm-11", title: "Campaign Asset", category: "Digital", year: "2024", image: betmgm1 },
-];
-
-const AVON_PROJECTS: Project[] = [
-  { id: "avon-1", title: "Jojoba Campaign", category: "Product Launch", year: "2024", image: avonJojoba },
-  { id: "avon-2", title: "Beauty Jars", category: "Packaging", year: "2024", image: avonPotinhos },
-  { id: "avon-3", title: "Serums Range", category: "Campaign", year: "2024", image: avonSeruns },
-  { id: "avon-4", title: "Product Social", category: "Social Media", year: "2024", image: avonPotinhosSq },
-  { id: "avon-5", title: "Campaign Asset", category: "Digital", year: "2024", image: avon2 },
-];
-
-const GETNET_PROJECTS: Project[] = [
-  { id: "getnet-1", title: "Institucional KV 1", category: "Key Visual", year: "2023", image: getnetInst1Tall },
-  { id: "getnet-2", title: "Institucional Wide", category: "Key Visual", year: "2023", image: getnetInst1Wide },
-  { id: "getnet-3", title: "Institucional Social", category: "Social Media", year: "2023", image: getnetInst1Sq },
-  { id: "getnet-4", title: "Institucional KV 2", category: "Key Visual", year: "2023", image: getnetInst2Tall },
-  { id: "getnet-5", title: "KV2 Social", category: "Social Media", year: "2023", image: getnetInst2Sq },
-  { id: "getnet-6", title: "Campaign KV 1", category: "Campaign", year: "2023", image: getnetKv1Sq },
-  { id: "getnet-7", title: "Campaign Wide", category: "Campaign", year: "2023", image: getnetKv1Wide },
-  { id: "getnet-8", title: "KV2 Square", category: "Social Media", year: "2023", image: getnetKv2Sq },
-  { id: "getnet-9", title: "Subway Poster", category: "OOH", year: "2023", image: getnetPoster },
-];
-
-const AUDI_PROJECTS: Project[] = [
-  { id: "audi-1", title: "Behance Case 1", category: "Case Study", year: "2024", image: audiBehance2 },
-  { id: "audi-2", title: "Behance Case 2", category: "Case Study", year: "2024", image: audiBehance3 },
-  { id: "audi-3", title: "Q8 Banner Wide", category: "Digital Ads", year: "2024", image: audiQ8Wide },
-  { id: "audi-4", title: "Q8 Campaign", category: "Digital Ads", year: "2024", image: audiQ8Medium },
-  { id: "audi-5", title: "Q8 Tower", category: "Digital Ads", year: "2024", image: audiQ8Tall },
-];
-
-interface ClientSectionProps {
-  client: string;
-  projects: Project[];
-  descriptionKey: string;
-  isFirst?: boolean;
+interface ClientCoverProps {
+  client: typeof CLIENTS[0];
+  index: number;
 }
 
-function ClientSection({ client, projects, descriptionKey, isFirst }: ClientSectionProps) {
+function ClientCover({ client, index }: ClientCoverProps) {
   const { t } = useLanguage();
-  
+
   return (
-    <section className={isFirst ? "px-4 md:px-8 pb-8 pt-6" : "px-4 md:px-8 py-12 border-t border-border"}>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-        <div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tighter">
-            {client}
-          </h2>
-          <p className="mt-2 text-muted-foreground font-mono text-xs max-w-md leading-relaxed">
-            {t(descriptionKey)}
+    <Link href={`/client/${client.id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="group relative overflow-hidden rounded-md cursor-pointer aspect-[4/5]"
+        data-testid={`card-client-${client.id}`}
+      >
+        <img
+          src={client.coverImage}
+          alt={client.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+          <h3 
+            className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase tracking-tight"
+            data-testid={`text-client-title-${client.id}`}
+          >
+            {client.name}
+          </h3>
+          <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
+            {t(client.descriptionKey)}
           </p>
+          <div className="mt-3 flex items-center gap-2">
+            <span className="font-mono text-xs text-white/60 uppercase tracking-widest">
+              {client.projects.length} {t("projects.count")}
+            </span>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-xs uppercase tracking-widest px-2 py-1 border border-border rounded-full">
-            {projects.length} {t("projects.count")}
-          </span>
+      </motion.div>
+    </Link>
+  );
+}
+
+function MobileCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const { t } = useLanguage();
+
+  const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
+  const scrollNext = useCallback(() => api?.scrollNext(), [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    
+    onSelect();
+    api.on("select", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  return (
+    <div className="relative px-4 py-6">
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "center",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-2">
+          {CLIENTS.map((client, index) => (
+            <CarouselItem key={client.id} className="pl-2 basis-[85%]">
+              <Link href={`/client/${client.id}`}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="group relative overflow-hidden rounded-md cursor-pointer aspect-[3/4]"
+                  data-testid={`card-mobile-client-${client.id}`}
+                >
+                  <img
+                    src={client.coverImage}
+                    alt={client.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-display text-2xl font-bold text-white uppercase tracking-tight">
+                      {client.name}
+                    </h3>
+                    <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
+                      {t(client.descriptionKey)}
+                    </p>
+                    <span className="font-mono text-xs text-white/60 mt-2 block">
+                      {client.projects.length} {t("projects.count")}
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="flex items-center justify-center gap-4 mt-4">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollPrev}
+          className="rounded-full"
+          data-testid="button-carousel-prev"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </Button>
+        <div className="flex gap-1.5">
+          {CLIENTS.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === current ? "bg-foreground" : "bg-muted-foreground/30"
+              }`}
+            />
+          ))}
         </div>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollNext}
+          className="rounded-full"
+          data-testid="button-carousel-next"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </Button>
       </div>
-      <MosaicGrid projects={projects} />
-    </section>
+    </div>
+  );
+}
+
+function DesktopGrid() {
+  return (
+    <div className="px-4 md:px-8 py-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {CLIENTS.map((client, index) => (
+          <ClientCover key={client.id} client={client} index={index} />
+        ))}
+      </div>
+    </div>
   );
 }
 
 export default function Home() {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background transition-colors duration-300">
@@ -156,32 +212,18 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <div id="work" className="bg-background">
-        <ClientSection 
-          client="BetMGM" 
-          projects={BETMGM_PROJECTS}
-          descriptionKey="client.betmgm"
-          isFirst
-        />
+      <section id="work" className="bg-background">
+        <div className="px-4 md:px-8 pb-4 pt-6">
+          <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">
+            {t("section.projects")}
+          </h2>
+          <p className="text-muted-foreground font-mono text-xs mt-1">
+            {t("section.projects.subtitle")}
+          </p>
+        </div>
         
-        <ClientSection 
-          client="Avon" 
-          projects={AVON_PROJECTS} 
-          descriptionKey="client.avon"
-        />
-        
-        <ClientSection 
-          client="GetNet" 
-          projects={GETNET_PROJECTS} 
-          descriptionKey="client.getnet"
-        />
-        
-        <ClientSection 
-          client="Audi" 
-          projects={AUDI_PROJECTS} 
-          descriptionKey="client.audi"
-        />
-      </div>
+        {isMobile ? <MobileCarousel /> : <DesktopGrid />}
+      </section>
 
       <section id="about" className="px-4 md:px-8 py-12 border-t border-border bg-secondary/30">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
