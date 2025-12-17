@@ -17,6 +17,9 @@ import audiBehance1 from "@assets/audi_extracted/Audi_Behance_01.png";
 import audiBehance2 from "@assets/audi_extracted/Audi_Behance_02.png";
 import audiBehance3 from "@assets/audi_extracted/Audi_Behance_03.png";
 import audiBehance4 from "@assets/audi_extracted/Audi_Behance_04.png";
+import audiQ8Wide from "@assets/audi_extracted/AUDI_Q8_1920x320.png";
+import audiQ8Medium from "@assets/audi_extracted/AUDI_Q8_1200x628.png";
+import audiQ8Tall from "@assets/audi_extracted/AUDI_Q8_160x600.png";
 
 const AVON_PROJECTS: Project[] = [
   {
@@ -93,6 +96,30 @@ const AUDI_PROJECTS: Project[] = [
     year: "2024",
     image: audiBehance4,
     size: "wide"
+  },
+  {
+    id: "audi-5",
+    title: "Q8 Banner Wide",
+    category: "Digital Ads",
+    year: "2024",
+    image: audiQ8Wide,
+    size: "wide"
+  },
+  {
+    id: "audi-6",
+    title: "Q8 Campaign",
+    category: "Digital Ads",
+    year: "2024",
+    image: audiQ8Medium,
+    size: "wide"
+  },
+  {
+    id: "audi-7",
+    title: "Q8 Tower",
+    category: "Digital Ads",
+    year: "2024",
+    image: audiQ8Tall,
+    size: "tall"
   }
 ];
 
