@@ -5,105 +5,18 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
-// BetMGM Real Assets
-import betmgmKv1 from "@assets/betmgm_extracted/KV1_1080x1920.png";
-import betmgmKv2 from "@assets/betmgm_extracted/KV2_1080x1920.png";
-import betmgmLibertadores1 from "@assets/betmgm_extracted/FINAL LIBERTADORES_KV1_1080x1920.png";
-import betmgmLibertadores2 from "@assets/betmgm_extracted/FINAL LIBERTADORES_KV2_800x800.png";
-import betmgmFortune from "@assets/betmgm_extracted/FortuneTiger_390x390.png";
-import betmgmOlympus from "@assets/betmgm_extracted/Gates of Olympus_KV 2_1280x720.png";
-import betmgmVegas from "@assets/betmgm_extracted/KV_BF_Vegas Friday.png";
-import betmgmViraLata from "@assets/betmgm_extracted/Vira lata caramelo_KV2_160x600.png";
-
 // Avon Real Assets
 import avonJojoba from "@assets/avon_extracted/Avon_Jojoba_1000x1500.png";
 import avonPotinhos from "@assets/avon_extracted/Avon_potinhos_1000x1500.png";
 import avonSeruns from "@assets/avon_extracted/Avon_seruns_1000x1500.png";
 import avonPotinhosSq from "@assets/avon_extracted/Avon_potinhos_1080x1080.png";
-import avonSerunsSq from "@assets/avon_extracted/Avon_seruns_1080x1080.png";
 import avon2 from "@assets/avon_extracted/2.png";
-
-// GetNet Real Assets
-import getnetKv1 from "@assets/getnet_extracted/_institucional kv 1_1080x1920.png";
-import getnetKv2 from "@assets/getnet_extracted/_institucional kv 2_1080x1920.png";
-import getnetStories from "@assets/getnet_extracted/conta_embarcada_stories_desconto_1080x1920.png";
-import getnetMockup from "@assets/getnet_extracted/mockuop].png";
-import getnetPoster from "@assets/getnet_extracted/Poster trem.png";
-import getnetKv1Sq from "@assets/getnet_extracted/_institucional kv 1_1080x1080.png";
 
 // Audi Real Assets
 import audiBehance1 from "@assets/audi_extracted/Audi_Behance_01.png";
 import audiBehance2 from "@assets/audi_extracted/Audi_Behance_02.png";
 import audiBehance3 from "@assets/audi_extracted/Audi_Behance_03.png";
 import audiBehance4 from "@assets/audi_extracted/Audi_Behance_04.png";
-
-
-const BETMGM_PROJECTS: Project[] = [
-  {
-    id: "betmgm-1",
-    title: "Libertadores KV",
-    category: "Key Visual",
-    year: "2024",
-    image: betmgmLibertadores1,
-    size: "tall"
-  },
-  {
-    id: "betmgm-2",
-    title: "Gates of Olympus",
-    category: "Game Promotion",
-    year: "2024",
-    image: betmgmOlympus,
-    size: "wide"
-  },
-  {
-    id: "betmgm-3",
-    title: "Campaign KV 1",
-    category: "Social Media",
-    year: "2024",
-    image: betmgmKv1,
-    size: "tall"
-  },
-  {
-    id: "betmgm-4",
-    title: "Libertadores Social",
-    category: "Social Media",
-    year: "2024",
-    image: betmgmLibertadores2,
-    size: "normal"
-  },
-  {
-    id: "betmgm-5",
-    title: "Fortune Tiger",
-    category: "Game Asset",
-    year: "2024",
-    image: betmgmFortune,
-    size: "normal"
-  },
-  {
-    id: "betmgm-6",
-    title: "Vegas Friday",
-    category: "Campaign",
-    year: "2024",
-    image: betmgmVegas,
-    size: "wide"
-  },
-  {
-    id: "betmgm-7",
-    title: "Campaign KV 2",
-    category: "Social Media",
-    year: "2024",
-    image: betmgmKv2,
-    size: "tall"
-  },
-  {
-    id: "betmgm-8",
-    title: "Vira Lata Caramelo",
-    category: "Banner Ads",
-    year: "2024",
-    image: betmgmViraLata,
-    size: "tall"
-  }
-];
 
 const AVON_PROJECTS: Project[] = [
   {
@@ -140,70 +53,11 @@ const AVON_PROJECTS: Project[] = [
   },
   {
     id: "avon-5",
-    title: "Serum Detail",
-    category: "Product Shot",
-    year: "2024",
-    image: avonSerunsSq,
-    size: "normal"
-  },
-  {
-    id: "avon-6",
     title: "Campaign Asset",
     category: "Digital",
     year: "2024",
     image: avon2,
     size: "wide"
-  }
-];
-
-const GETNET_PROJECTS: Project[] = [
-  {
-    id: "getnet-1",
-    title: "Institutional KV 1",
-    category: "Key Visual",
-    year: "2023",
-    image: getnetKv1,
-    size: "tall"
-  },
-  {
-    id: "getnet-2",
-    title: "App Mockup",
-    category: "UI Design",
-    year: "2023",
-    image: getnetMockup,
-    size: "wide"
-  },
-  {
-    id: "getnet-3",
-    title: "Stories Campaign",
-    category: "Social Media",
-    year: "2023",
-    image: getnetStories,
-    size: "tall"
-  },
-  {
-    id: "getnet-4",
-    title: "Subway Poster",
-    category: "OOH",
-    year: "2023",
-    image: getnetPoster,
-    size: "normal"
-  },
-  {
-    id: "getnet-5",
-    title: "Institutional KV 2",
-    category: "Key Visual",
-    year: "2023",
-    image: getnetKv2,
-    size: "tall"
-  },
-  {
-    id: "getnet-6",
-    title: "Social Post",
-    category: "Social Media",
-    year: "2023",
-    image: getnetKv1Sq,
-    size: "normal"
   }
 ];
 
@@ -320,22 +174,10 @@ export default function Home() {
       {/* Client Sections */}
       <div id="work" className="bg-background">
         <ClientSection 
-          client="BetMGM" 
-          projects={BETMGM_PROJECTS}
-          descriptionKey="client.betmgm"
-          isFirst
-        />
-        
-        <ClientSection 
           client="Avon" 
           projects={AVON_PROJECTS} 
           descriptionKey="client.avon"
-        />
-        
-        <ClientSection 
-          client="GetNet" 
-          projects={GETNET_PROJECTS} 
-          descriptionKey="client.getnet"
+          isFirst
         />
         
         <ClientSection 
