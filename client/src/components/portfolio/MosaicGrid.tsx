@@ -7,9 +7,10 @@ import Masonry from "react-masonry-css";
 
 interface MosaicGridProps {
   projects: Project[];
+  clientName?: string;
 }
 
-export function MosaicGrid({ projects }: MosaicGridProps) {
+export function MosaicGrid({ projects, clientName }: MosaicGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const breakpointColumns = {
@@ -74,7 +75,7 @@ export function MosaicGrid({ projects }: MosaicGridProps) {
                     <div className="mt-12 space-y-4">
                       <div className="border-t border-black/10 dark:border-white/10 pt-4">
                         <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</span>
-                        <span className="font-medium">Studio {selectedProject.title}</span>
+                        <span className="font-medium">{clientName || "Studio"}</span>
                       </div>
                       <div className="border-t border-black/10 dark:border-white/10 pt-4">
                         <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-1">Role</span>

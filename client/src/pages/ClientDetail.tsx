@@ -79,7 +79,7 @@ export default function ClientDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <MosaicGrid projects={client.projects} />
+          <MosaicGrid projects={client.projects} clientName={client.name} />
         </motion.div>
       </section>
 
