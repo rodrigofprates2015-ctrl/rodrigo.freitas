@@ -37,7 +37,17 @@ import audiQ8Wide from "@assets/audi_extracted/AUDI_Q8_Consideracao_1920×320.pn
 import audiQ8Medium from "@assets/audi_extracted/AUDI_Q8_Consideracao_1200×628.png";
 import audiQ8Tall from "@assets/audi_extracted/AUDI_Q8_Consideracao_160x600.png";
 
-import bancoFi from "@assets/banco_do_brasil_extracted/1.png";
+import bancoCircuitoWsl from "@assets/BB_CIRCUITO_WSL_DISPLAY_970x250_1766124534214.png";
+import bancoSustentabilidade300 from "@assets/BB_SUSTENTABILIDADE_ALWAYSON_PEÇAS_DIGITAIS_ABRIL_300x600_DCM_1766124534214.png";
+import bancoSustentabilidade360 from "@assets/BB_SUSTENTABILIDADE_ALWAYSON_PEÇAS_DIGITAIS_ABRIL_360x280_1766124534214.jpg";
+import bancoFrame from "@assets/Frame_2_1766124534215.png";
+import bancoStep from "@assets/STEP_02_1766124534215.png";
+import bancoTela from "@assets/tela_2_1766124534215.png";
+import banco01 from "@assets/01_1766124534216.jpg";
+import banco02 from "@assets/02_1766124534216.jpg";
+import banco03 from "@assets/03_1766124534216.jpg";
+import banco04 from "@assets/04_1766124534217.jpg";
+import bancoEconomia from "@assets/2_1766124534216.png";
 
 export interface Project {
   id: string;
@@ -127,12 +137,18 @@ export const CLIENTS: Client[] = [
     id: "banco-do-brasil",
     name: "Banco do Brasil",
     descriptionKey: "client.banco",
-    coverImage: bancoFi,
+    coverImage: bancoStep,
     projects: [
-      { id: "banco-1", title: "Campanha Digital", category: "Digital Campaign", year: "2024", image: bancoFi },
-      { id: "banco-2", title: "Material Institucional", category: "Branding", year: "2024", image: bancoFi },
-      { id: "banco-3", title: "Social Media", category: "Social Media", year: "2024", image: bancoFi },
-      { id: "banco-4", title: "Peça Promocional", category: "Advertising", year: "2024", image: bancoFi },
+      { id: "banco-1", title: "BB. Fã do Surfe Brasileiro", category: "Sports Campaign", year: "2024", image: bancoCircuitoWsl },
+      { id: "banco-2", title: "Sustentabilidade - Economia Verde", category: "Environmental", year: "2024", image: bancoEconomia },
+      { id: "banco-3", title: "Dia da Mulher Negra Latino-Americana", category: "Social Impact", year: "2024", image: bancoFrame },
+      { id: "banco-4", title: "Sustentabilidade - Peças Digitais", category: "Digital Campaign", year: "2024", image: bancoSustentabilidade300 },
+      { id: "banco-5", title: "Empreendedorismo Feminino", category: "Social Program", year: "2024", image: banco01 },
+      { id: "banco-6", title: "Ações de Impacto Social", category: "Corporate Social", year: "2024", image: banco02 },
+      { id: "banco-7", title: "A Gente se Importa", category: "Brand Campaign", year: "2024", image: banco03 },
+      { id: "banco-8", title: "Conheça as Ações BB", category: "Institucional", year: "2024", image: banco04 },
+      { id: "banco-9", title: "Peça Sustentabilidade", category: "Digital Asset", year: "2024", image: bancoSustentabilidade360 },
+      { id: "banco-10", title: "Mulher Negra Latina-Caribenha", category: "Diversity", year: "2024", image: bancoTela },
     ]
   }
 ];
