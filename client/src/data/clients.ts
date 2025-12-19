@@ -9,6 +9,11 @@ import betmgmKv1 from "@assets/betmgm_extracted/KV1_1080x1920.png";
 import betmgmKv2 from "@assets/betmgm_extracted/KV2_1080x1920.png";
 import betmgmVegas from "@assets/betmgm_extracted/KV_BF_Vegas Friday.png";
 import betmgmViraLata from "@assets/betmgm_extracted/Vira lata caramelo_KV2_160x600.png";
+import betmgmDivirta from "@assets/KV1_1766113599926.png";
+import betmgmMilionario from "@assets/KV2_1766113599926.png";
+import betmgmCombinadaCorinthians from "@assets/COMBINADA_1766113636505.png";
+import betmgmEspecialCorinthians from "@assets/ESPECIAL_1766113636506.png";
+import betmgmJogosCorinthians from "@assets/JOGOS_1766113636506.png";
 
 import avonJojoba from "@assets/avon_extracted/Avon_Jojoba_1000x1500.png";
 import avonPotinhos from "@assets/avon_extracted/Avon_potinhos_1000x1500.png";
@@ -66,6 +71,11 @@ export const CLIENTS: Client[] = [
       { id: "betmgm-9", title: "Gold Blitz", category: "Banner Ads", year: "2024", image: betmgmGoldBlitz },
       { id: "betmgm-10", title: "Banner 970x250", category: "Digital Ads", year: "2024", image: betmgmBanner },
       { id: "betmgm-11", title: "Campaign Asset", category: "Digital", year: "2024", image: betmgm1 },
+      { id: "betmgm-12", title: "Divirta-se Jackpot", category: "Key Visual", year: "2024", image: betmgmDivirta },
+      { id: "betmgm-13", title: "Comece o Ano Milionário", category: "Key Visual", year: "2024", image: betmgmMilionario },
+      { id: "betmgm-14", title: "Combinada Corinthians", category: "Sports Betting", year: "2024", image: betmgmCombinadaCorinthians },
+      { id: "betmgm-15", title: "Especial Corinthians", category: "Sports Betting", year: "2024", image: betmgmEspecialCorinthians },
+      { id: "betmgm-16", title: "Jogos Corinthians", category: "Sports Betting", year: "2024", image: betmgmJogosCorinthians },
     ]
   },
   {

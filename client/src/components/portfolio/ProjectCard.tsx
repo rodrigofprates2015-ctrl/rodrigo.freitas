@@ -29,7 +29,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-auto transition-all duration-500 ease-out grayscale group-hover:grayscale-0 group-hover:scale-[1.02]"
+          className="w-full h-auto transition-all duration-500 ease-out group-hover:scale-[1.02]"
         />
         
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
