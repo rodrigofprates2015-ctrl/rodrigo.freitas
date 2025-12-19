@@ -365,7 +365,7 @@ export default function Home() {
             <span className="font-mono text-xs text-muted-foreground">+55 (11) 95775-0903</span>
         </div>
         <div className="flex gap-4">
-             <a href="https://www.behance.net/rodrigofreitas" target="_blank" className="font-mono text-xs uppercase hover:underline">Behance</a>
+             <a href="https://www.behance.net/rodrigofreitas27" target="_blank" className="font-mono text-xs uppercase hover:underline">Behance</a>
              <a href="mailto:rodrigo.f.prates2023@gmail.com" className="font-mono text-xs uppercase hover:underline">Email</a>
         </div>
         <span className="font-mono text-xs text-muted-foreground">{t("footer.rights")}</span>
