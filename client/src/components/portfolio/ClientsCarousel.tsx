@@ -25,41 +25,21 @@ const CLIENTS = [
   "C&A",
 ];
 
-const COLORS = [
-  "from-purple-500/20 to-purple-600/20",
-  "from-blue-500/20 to-blue-600/20",
-  "from-pink-500/20 to-pink-600/20",
-  "from-green-500/20 to-green-600/20",
-  "from-orange-500/20 to-orange-600/20",
-  "from-red-500/20 to-red-600/20",
-  "from-indigo-500/20 to-indigo-600/20",
-  "from-cyan-500/20 to-cyan-600/20",
-  "from-teal-500/20 to-teal-600/20",
-  "from-rose-500/20 to-rose-600/20",
-  "from-amber-500/20 to-amber-600/20",
-  "from-lime-500/20 to-lime-600/20",
-  "from-violet-500/20 to-violet-600/20",
-  "from-fuchsia-500/20 to-fuchsia-600/20",
-  "from-sky-500/20 to-sky-600/20",
-  "from-emerald-500/20 to-emerald-600/20",
-];
-
 function ClientGrid({ startIndex }: { startIndex: number }) {
   const clientsInSlide = CLIENTS.slice(startIndex, startIndex + 8);
   
   return (
     <div className="grid grid-cols-4 gap-3 w-full">
       {clientsInSlide.map((client, idx) => {
-        const colorIndex = (startIndex + idx) % COLORS.length;
         return (
           <motion.div
             key={`${client}-${idx}`}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className={`p-4 rounded-lg bg-gradient-to-br ${COLORS[colorIndex]} border border-border hover-elevate transition-all duration-300 flex items-center justify-center h-32 cursor-pointer`}
+            className="p-4 rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center h-32 cursor-pointer"
           >
-            <span className="text-center font-display font-bold text-sm uppercase tracking-tight line-clamp-2">
+            <span className="text-center font-display font-bold text-lg md:text-xl uppercase tracking-tight line-clamp-2">
               {client}
             </span>
           </motion.div>
