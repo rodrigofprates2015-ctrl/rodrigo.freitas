@@ -22,6 +22,8 @@ interface ClientCoverProps {
 
 function ClientCover({ client, index }: ClientCoverProps) {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
+  const coverImage = isMobile && client.coverImageMobile ? client.coverImageMobile : client.coverImage;
 
   return (
     <Link href={`/client/${client.id}`}>
@@ -33,7 +35,7 @@ function ClientCover({ client, index }: ClientCoverProps) {
         data-testid={`card-client-${client.id}`}
       >
         <img
-          src={client.coverImage}
+          src={coverImage}
           alt={client.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -104,7 +106,7 @@ function MobileCarousel() {
                   data-testid={`card-mobile-client-${client.id}`}
                 >
                   <img
-                    src={client.coverImage}
+                    src={client.coverImageMobile || client.coverImage}
                     alt={client.name}
                     className="w-full h-full object-cover"
                   />
