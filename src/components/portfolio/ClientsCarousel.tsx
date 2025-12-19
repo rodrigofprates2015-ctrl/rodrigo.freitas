@@ -16,6 +16,7 @@ import logoAvon from "@assets/avon_1766125097696.png";
 import logoBetmgm from "@assets/betmgm_1766125097697.png";
 import logoCea from "@assets/CEA_1766125097697.png";
 import logoBancoDoBrasil from "@assets/image_1766125138397.png";
+import logoAkai from "@assets/BANNERSprodutos_1766168578599.jpg";
 
 interface ClientsCarouselProps {
   title: string;
@@ -32,6 +33,7 @@ const CLIENTS: ClientLogo[] = [
   { name: "Avon", logo: logoAvon },
   { name: "GetNet", logo: logoGetnet },
   { name: "Audi", logo: logoAudi },
+  { name: "Akai", logo: logoAkai },
   { name: "Banco do Brasil", logo: logoBancoDoBrasil },
   { name: "Nestlé", logo: logoNestle },
   { name: "Santander", logo: logoSantander },

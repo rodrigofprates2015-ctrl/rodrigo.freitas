@@ -49,6 +49,16 @@ import banco03 from "@assets/03_1766124534216.jpg";
 import banco04 from "@assets/04_1766124534217.jpg";
 import bancoEconomia from "@assets/2_1766124534216.png";
 
+// Akai Campaign
+import akaiCapaBanner from "@assets/BANNERSprodutos_1766168578599.jpg";
+import akaiBanner1 from "@assets/Banner1_1766168578601.jpg";
+import akaiBanner2 from "@assets/Banner2_1766168578601.jpg";
+import akaiBanner3Mob from "@assets/Banner3Mob_1766168578602.jpg";
+import akaiBanner4 from "@assets/Banner4_1766168578602.jpg";
+import akaiBanner5 from "@assets/Banner5_1766168578602.jpg";
+import akaiNati from "@assets/BannerBanner_Nati_1_1766168578603.jpg";
+import akaiClear from "@assets/BannerClear_1766168578603.jpg";
+
 // Brand Logos
 import logoGetnet from "@assets/Getnet_1766125097695.png";
 import logoNestle from "@assets/Nestle_1766125097695.png";
@@ -160,6 +170,22 @@ export const CLIENTS: Client[] = [
       { id: "banco-8", title: "Conheça as Ações BB", category: "Institucional", year: "2024", image: banco04 },
       { id: "banco-9", title: "Peça Sustentabilidade", category: "Digital Asset", year: "2024", image: bancoSustentabilidade360 },
       { id: "banco-10", title: "Mulher Negra Latina-Caribenha", category: "Diversity", year: "2024", image: bancoTela },
+    ]
+  },
+  {
+    id: "akai",
+    name: "Akai",
+    descriptionKey: "client.akai",
+    coverImage: akaiCapaBanner,
+    projects: [
+      { id: "akai-1", title: "Akai & Taiff Produtos", category: "Product Campaign", year: "2024", image: akaiCapaBanner },
+      { id: "akai-2", title: "Honey Hair Line", category: "Hair Care Campaign", year: "2024", image: akaiBanner1 },
+      { id: "akai-3", title: "Salon Line SOS Bomba", category: "Product Launch", year: "2024", image: akaiBanner2 },
+      { id: "akai-4", title: "Pantene Colágeno", category: "Product Campaign", year: "2024", image: akaiBanner3Mob },
+      { id: "akai-5", title: "Elseve L'Oreal Paris", category: "Beauty Campaign", year: "2024", image: akaiBanner4 },
+      { id: "akai-6", title: "VitaDerm Produtos", category: "Skincare Campaign", year: "2024", image: akaiBanner5 },
+      { id: "akai-7", title: "Nati Esmaltes", category: "Beauty Campaign", year: "2024", image: akaiNati },
+      { id: "akai-8", title: "Clear Shampoo", category: "Product Campaign", year: "2024", image: akaiClear },
     ]
   }
 ];

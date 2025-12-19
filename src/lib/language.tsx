@@ -45,6 +45,8 @@ const translations: Record<Language, Record<string, string>> = {
     "client.getnet": "Criação de identidade visual institucional, materiais para campanhas B2B e peças promocionais focadas em soluções de pagamento.",
     "client.audi": "Desenvolvimento de peças digitais premium para lançamentos automotivos, seguindo rigorosos guidelines globais da marca com foco em performance e luxo.",
     "client.avon": "Design editorial para catálogos digitais, motion graphics para stories e reels, e identidade visual para campanhas de beleza focadas em diversidade.",
+    "client.akai": "Campanhas multimarca para portfólio de produtos Akai, Taiff, Salon Line, Pantene, Elseve, VitaDerm e outras. Design de banners, peças promocionais e identidades visuais para distribuição digital.",
+    "client.banco": "Campanhas de impacto social, sustentabilidade e responsabilidade corporativa. Desenvolvimento de identidades visuais para programas de empreendedorismo, diversidade e ações ambientais.",
     "projects.count": "Projetos",
     "footer.rights": "© 2025 Rodrigo Freitas. Todos os direitos reservados."
   },
@@ -82,6 +84,8 @@ const translations: Record<Language, Record<string, string>> = {
     "client.getnet": "Creation of institutional visual identity, materials for B2B campaigns, and promotional pieces focused on payment solutions.",
     "client.audi": "Development of premium digital pieces for automotive launches, following strict global brand guidelines with a focus on performance and luxury.",
     "client.avon": "Editorial design for digital catalogs, motion graphics for stories and reels, and visual identity for beauty campaigns focused on diversity.",
+    "client.akai": "Multi-brand campaigns for Akai product portfolio, Taiff, Salon Line, Pantene, Elseve, VitaDerm and more. Banner design, promotional pieces and visual identities for digital distribution.",
+    "client.banco": "Social impact campaigns, sustainability and corporate responsibility. Development of visual identities for entrepreneurship programs, diversity initiatives, and environmental actions.",
     "projects.count": "Projects",
     "footer.rights": "© 2025 Rodrigo Freitas. All rights reserved."
   },
@@ -119,6 +123,8 @@ const translations: Record<Language, Record<string, string>> = {
     "client.getnet": "Creación de identidad visual institucional, materiales para campañas B2B y piezas promocionales enfocadas en soluciones de pago.",
     "client.audi": "Desarrollo de piezas digitales premium para lanzamientos automotrices, siguiendo rigurosas pautas globales de la marca con enfoque en rendimiento y lujo.",
     "client.avon": "Diseño editorial para catálogos digitales, gráficos en movimiento para historias y reels, e identidad visual para campañas de belleza enfocadas en la diversidad.",
+    "client.akai": "Campañas multimarca para cartera de productos Akai, Taiff, Salon Line, Pantene, Elseve, VitaDerm y más. Diseño de banners, piezas promocionales e identidades visuales para distribución digital.",
+    "client.banco": "Campañas de impacto social, sostenibilidad y responsabilidad corporativa. Desarrollo de identidades visuales para programas de emprendimiento, iniciativas de diversidad y acciones ambientales.",
     "projects.count": "Proyectos",
     "footer.rights": "© 2025 Rodrigo Freitas. Todos los derechos reservados."
   }
