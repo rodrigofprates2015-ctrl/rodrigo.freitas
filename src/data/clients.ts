@@ -64,6 +64,7 @@ import akaiBanner1Mob from "@assets/Banner1Mob_1766170128302.jpg";
 import akaiBanner2Mob from "@assets/Banner2Mob_1766170128302.jpg";
 import akaiBanner4Mob from "@assets/Banner4Mob_1766170128302.jpg";
 import akaiBanner5Mob from "@assets/Banner5Mob_1766170128303.jpg";
+import akaiClearNew from "@assets/BannerClear_1766170326394.jpg";
 
 // Brand Logos
 import logoGetnet from "@assets/Getnet_1766125097695.png";
@@ -182,7 +183,7 @@ export const CLIENTS: Client[] = [
     id: "akai",
     name: "Akai",
     descriptionKey: "client.akai",
-    coverImage: akaiCapaBanner,
+    coverImage: akaiClearNew,
     projects: [
       { id: "akai-1", title: "Akai & Taiff Produtos", category: "Product Campaign", year: "2024", image: akaiCapaBanner },
       { id: "akai-2", title: "Honey Hair Line", category: "Hair Care Campaign", year: "2024", image: akaiBanner1 },
