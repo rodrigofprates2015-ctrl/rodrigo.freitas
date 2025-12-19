@@ -29,7 +29,7 @@ function ClientCover({ client, index }: ClientCoverProps) {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="group relative overflow-hidden rounded-md cursor-pointer aspect-[16/9] w-full"
+        className="group relative overflow-hidden rounded-md cursor-pointer aspect-[4/1] w-full"
         data-testid={`card-client-${client.id}`}
       >
         <img
