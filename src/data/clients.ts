@@ -76,6 +76,7 @@ import logoAvon from "@assets/avon_1766125097696.png";
 import logoBetmgm from "@assets/betmgm_1766125097697.png";
 import logoCea from "@assets/CEA_1766125097697.png";
 import logoBancoDoBrasil from "@assets/image_1766125138397.png";
+import zeekrBanner from "@assets/zeekr_extracted/Zeekr_7X_Banner.png";
 
 export interface Project {
   id: string;
@@ -202,6 +203,15 @@ export const CLIENTS: Client[] = [
       { id: "akai-12", title: "SOS Bomba Campaign", category: "Product Campaign", year: "2024", image: akaiBanner2Mob },
       { id: "akai-13", title: "Elseve Campaign Mobile", category: "Beauty Campaign", year: "2024", image: akaiBanner4Mob },
       { id: "akai-14", title: "VitaDerm Campaign Mobile", category: "Skincare Campaign", year: "2024", image: akaiBanner5Mob },
+    ]
+  },
+  {
+    id: "zeekr",
+    name: "Zeekr",
+    descriptionKey: "client.zeekr",
+    coverImage: zeekrBanner,
+    projects: [
+      { id: "zeekr-1", title: "Zeekr 7X - Sinta Cada Jornada", category: "Product Launch", year: "2024", image: zeekrBanner },
     ]
   }
 ];
