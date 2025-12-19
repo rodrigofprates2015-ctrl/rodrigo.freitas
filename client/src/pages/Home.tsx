@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { CLIENTS } from "@/data/clients";
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowDown, ChevronLeft, ChevronRight, BookOpen, Briefcase, Code2, Globe, Award } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
@@ -225,83 +225,130 @@ export default function Home() {
         {isMobile ? <MobileCarousel /> : <DesktopGrid />}
       </section>
 
-      <section id="about" className="px-4 md:px-8 py-12 border-t border-border bg-secondary/30">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="font-display text-2xl font-bold uppercase tracking-tight mb-4">
-              {t("section.about")}
-            </h2>
-            <div className="prose prose-sm dark:prose-invert font-sans font-light">
+      <section id="about" className="px-4 md:px-8 py-16 border-t border-border bg-secondary/30">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* About Section */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <Award className="w-6 h-6" />
+              <h2 className="font-display text-3xl font-bold uppercase tracking-tight">
+                {t("section.about")}
+              </h2>
+            </div>
+            <div className="prose prose-sm dark:prose-invert font-sans font-light space-y-4 text-base leading-relaxed">
               <p>{t("about.p1")}</p>
               <p>{t("about.p2")}</p>
+              <p>Com mais de 5 anos de experiência, desenvolvo soluções visuais estratégicas que conectam marca e audiência. Meu trabalho combina pesquisa, criatividade e rigor técnico para entregar resultados mensuráveis.</p>
             </div>
 
-            <div className="mt-6">
-               <h3 className="font-display text-lg font-bold uppercase tracking-tight mb-2">{t("section.education")}</h3>
-               <ul className="space-y-2 font-mono text-xs">
-                 <li>
-                    <span className="block font-bold">{t("edu.pos")}</span>
+            {/* Education */}
+            <div className="mt-8 pt-8 border-t border-border">
+               <div className="flex items-center gap-3 mb-4">
+                <BookOpen className="w-5 h-5" />
+                <h3 className="font-display text-xl font-bold uppercase tracking-tight">{t("section.education")}</h3>
+               </div>
+               <ul className="space-y-4 font-mono text-sm">
+                 <li className="pl-7 border-l-2 border-border">
+                    <span className="block font-bold text-base">{t("edu.pos")}</span>
                     <span className="text-muted-foreground">{t("edu.pos.school")}</span>
                  </li>
-                 <li>
-                    <span className="block font-bold">{t("edu.grad")}</span>
+                 <li className="pl-7 border-l-2 border-border">
+                    <span className="block font-bold text-base">{t("edu.grad")}</span>
                     <span className="text-muted-foreground">{t("edu.grad.school")}</span>
                  </li>
                </ul>
             </div>
           </div>
-          
-          <div className="grid grid-cols-2 gap-6 font-mono text-xs">
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* Experience */}
             <div>
-              <h3 className="uppercase tracking-widest text-muted-foreground mb-3">{t("section.experience")}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <span className="block font-bold">{t("exp.art_director")}</span>
+              <div className="flex items-center gap-3 mb-4">
+                <Briefcase className="w-5 h-5" />
+                <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.experience")}</h3>
+              </div>
+              <ul className="space-y-3 font-mono text-xs">
+                <li className="p-3 rounded-md bg-background/50 border border-border">
+                  <span className="block font-bold text-sm">{t("exp.art_director")}</span>
                   <span className="text-muted-foreground">Point Media, 2025</span>
                 </li>
-                <li>
-                  <span className="block font-bold">{t("exp.teacher")}</span>
+                <li className="p-3 rounded-md bg-background/50 border border-border">
+                  <span className="block font-bold text-sm">{t("exp.teacher")}</span>
                   <span className="text-muted-foreground">ETEC de Poá, 2025</span>
                 </li>
-                <li>
-                  <span className="block font-bold">{t("exp.senior")}</span>
+                <li className="p-3 rounded-md bg-background/50 border border-border">
+                  <span className="block font-bold text-sm">{t("exp.senior")}</span>
                   <span className="text-muted-foreground">Truther, 2025</span>
                 </li>
-                <li>
-                  <span className="block font-bold">{t("exp.art_director")}</span>
+                <li className="p-3 rounded-md bg-background/50 border border-border">
+                  <span className="block font-bold text-sm">{t("exp.art_director")}</span>
                   <span className="text-muted-foreground">Norte Marketing, 2023-2024</span>
                 </li>
-                 <li>
-                  <span className="block font-bold">{t("exp.graphic")}</span>
+                 <li className="p-3 rounded-md bg-background/50 border border-border">
+                  <span className="block font-bold text-sm">{t("exp.graphic")}</span>
                   <span className="text-muted-foreground">Agência Bloomin, 2022-2023</span>
                 </li>
               </ul>
             </div>
-            
-            <div>
-              <h3 className="uppercase tracking-widest text-muted-foreground mb-3">{t("section.clients")}</h3>
-              <ul className="space-y-1">
-                <li>BetMGM</li>
-                <li>Avon</li>
-                <li>GetNet</li>
-                <li>Audi</li>
-                <li>Banco do Brasil</li>
-                <li>Nestlé</li>
-                <li>Santander</li>
-                <li>C&A</li>
-                <li>Tim</li>
-                <li>Amil</li>
-                <li>Marisa</li>
-              </ul>
 
-              <h3 className="uppercase tracking-widest text-muted-foreground mb-3 mt-6">{t("section.software")}</h3>
-              <ul className="space-y-1">
-                <li>Photoshop, Illustrator</li>
-                <li>After Effects, InDesign</li>
-                <li>Figma</li>
-                <li>Midjourney AI, ChatGPT AI</li>
+            {/* Languages */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <Globe className="w-5 h-5" />
+                <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.languages")}</h3>
+              </div>
+              <ul className="space-y-2 font-mono text-xs">
+                <li className="flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
+                  {t("lang.portuguese")}
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
+                  {t("lang.english")}
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
+                  {t("lang.spanish")}
+                </li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Row: Clients & Software */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 pt-8 border-t border-border">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Award className="w-5 h-5" />
+              <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.clients")}</h3>
+            </div>
+            <ul className="grid grid-cols-2 gap-2 font-mono text-xs">
+              <li>BetMGM</li>
+              <li>Avon</li>
+              <li>GetNet</li>
+              <li>Audi</li>
+              <li>Banco do Brasil</li>
+              <li>Nestlé</li>
+              <li>Santander</li>
+              <li>C&A</li>
+              <li>Tim</li>
+              <li>Amil</li>
+              <li>Marisa</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Code2 className="w-5 h-5" />
+              <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.software")}</h3>
+            </div>
+            <ul className="space-y-2 font-mono text-xs">
+              <li>Photoshop, Illustrator</li>
+              <li>After Effects, InDesign</li>
+              <li>Figma</li>
+              <li>Midjourney AI, ChatGPT AI</li>
+            </ul>
           </div>
         </div>
       </section>
