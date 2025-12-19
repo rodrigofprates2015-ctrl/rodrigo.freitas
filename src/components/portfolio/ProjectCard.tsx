@@ -19,7 +19,9 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <motion.div
       layoutId={`project-${project.id}`}
-      className="group relative w-full cursor-pointer overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-4 rounded-sm"
+      className={`group relative cursor-pointer overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-4 rounded-sm ${
+        project.preserveSize ? "w-auto" : "w-full"
+      }`}
       onClick={() => onClick(project)}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +34,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
           alt={project.title}
           className={`transition-all duration-500 ease-out group-hover:scale-[1.02] ${
             project.preserveSize 
-              ? "h-auto max-w-full" 
+              ? "h-auto" 
               : "w-full h-auto"
           }`}
         />
