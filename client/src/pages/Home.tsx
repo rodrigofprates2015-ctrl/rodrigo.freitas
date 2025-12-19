@@ -226,127 +226,128 @@ export default function Home() {
         {isMobile ? <MobileCarousel /> : <DesktopGrid />}
       </section>
 
-      <section id="about" className="px-4 md:px-8 py-16 border-t border-border bg-secondary/30">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* About Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <Award className="w-6 h-6" />
-              <h2 className="font-display text-3xl font-bold uppercase tracking-tight">
-                {t("section.about")}
-              </h2>
-            </div>
-            <div className="prose prose-sm dark:prose-invert font-sans font-light space-y-4 text-base leading-relaxed">
-              <p>{t("about.p1")}</p>
-              <p>{t("about.p2")}</p>
-              <p>Com mais de 5 anos de experiência, desenvolvo soluções visuais estratégicas que conectam marca e audiência. Meu trabalho combina pesquisa, criatividade e rigor técnico para entregar resultados mensuráveis.</p>
-            </div>
+      <section id="about" className="px-4 md:px-8 py-20 border-t border-border bg-secondary/30">
+        {/* About Section - Full Width Hero */}
+        <div className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <Award className="w-8 h-8" />
+            <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight">
+              {t("section.about")}
+            </h2>
+          </div>
+          <div className="max-w-4xl space-y-6 text-lg md:text-xl font-sans font-light leading-relaxed text-foreground">
+            <p className="text-base md:text-lg">{t("about.p1")}</p>
+            <p className="text-base md:text-lg">{t("about.p2")}</p>
+            <p className="text-base md:text-lg">Com mais de 5 anos de experiência, desenvolvo soluções visuais estratégicas que conectam marca e audiência. Meu trabalho combina pesquisa, criatividade e rigor técnico para entregar resultados mensuráveis.</p>
+          </div>
+        </div>
 
-            {/* Education */}
-            <div className="mt-8 pt-8 border-t border-border">
-               <div className="flex items-center gap-3 mb-4">
-                <BookOpen className="w-5 h-5" />
-                <h3 className="font-display text-xl font-bold uppercase tracking-tight">{t("section.education")}</h3>
-               </div>
-               <ul className="space-y-4 font-mono text-sm">
-                 <li className="pl-7 border-l-2 border-border">
-                    <span className="block font-bold text-base">{t("edu.pos")}</span>
-                    <span className="text-muted-foreground">{t("edu.pos.school")}</span>
-                 </li>
-                 <li className="pl-7 border-l-2 border-border">
-                    <span className="block font-bold text-base">{t("edu.grad")}</span>
-                    <span className="text-muted-foreground">{t("edu.grad.school")}</span>
-                 </li>
-               </ul>
+        {/* Experience & Education Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {/* Experience Section */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <Briefcase className="w-7 h-7" />
+              <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.experience")}</h3>
+            </div>
+            <div className="space-y-4">
+              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+                <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
+                <span className="text-muted-foreground font-mono text-sm">Point Media, 2025</span>
+              </div>
+              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+                <span className="block font-bold text-base md:text-lg mb-1">{t("exp.teacher")}</span>
+                <span className="text-muted-foreground font-mono text-sm">ETEC de Poá, 2025</span>
+              </div>
+              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+                <span className="block font-bold text-base md:text-lg mb-1">{t("exp.senior")}</span>
+                <span className="text-muted-foreground font-mono text-sm">Truther, 2025</span>
+              </div>
+              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+                <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
+                <span className="text-muted-foreground font-mono text-sm">Norte Marketing, 2023-2024</span>
+              </div>
+              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+                <span className="block font-bold text-base md:text-lg mb-1">{t("exp.graphic")}</span>
+                <span className="text-muted-foreground font-mono text-sm">Agência Bloomin, 2022-2023</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-8">
-            {/* Experience */}
+          {/* Education & Languages */}
+          <div className="space-y-16">
+            {/* Education */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Briefcase className="w-5 h-5" />
-                <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.experience")}</h3>
+              <div className="flex items-center gap-3 mb-8">
+                <BookOpen className="w-7 h-7" />
+                <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.education")}</h3>
               </div>
-              <ul className="space-y-3 font-mono text-xs">
-                <li className="p-3 rounded-md bg-background/50 border border-border">
-                  <span className="block font-bold text-sm">{t("exp.art_director")}</span>
-                  <span className="text-muted-foreground">Point Media, 2025</span>
-                </li>
-                <li className="p-3 rounded-md bg-background/50 border border-border">
-                  <span className="block font-bold text-sm">{t("exp.teacher")}</span>
-                  <span className="text-muted-foreground">ETEC de Poá, 2025</span>
-                </li>
-                <li className="p-3 rounded-md bg-background/50 border border-border">
-                  <span className="block font-bold text-sm">{t("exp.senior")}</span>
-                  <span className="text-muted-foreground">Truther, 2025</span>
-                </li>
-                <li className="p-3 rounded-md bg-background/50 border border-border">
-                  <span className="block font-bold text-sm">{t("exp.art_director")}</span>
-                  <span className="text-muted-foreground">Norte Marketing, 2023-2024</span>
-                </li>
-                 <li className="p-3 rounded-md bg-background/50 border border-border">
-                  <span className="block font-bold text-sm">{t("exp.graphic")}</span>
-                  <span className="text-muted-foreground">Agência Bloomin, 2022-2023</span>
-                </li>
-              </ul>
+              <div className="space-y-4">
+                <div className="p-6 rounded-lg bg-background border border-border">
+                  <span className="block font-bold text-base md:text-lg mb-1">{t("edu.pos")}</span>
+                  <span className="text-muted-foreground font-mono text-sm">{t("edu.pos.school")}</span>
+                </div>
+                <div className="p-6 rounded-lg bg-background border border-border">
+                  <span className="block font-bold text-base md:text-lg mb-1">{t("edu.grad")}</span>
+                  <span className="text-muted-foreground font-mono text-sm">{t("edu.grad.school")}</span>
+                </div>
+              </div>
             </div>
 
             {/* Languages */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Globe className="w-5 h-5" />
-                <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.languages")}</h3>
+              <div className="flex items-center gap-3 mb-8">
+                <Globe className="w-7 h-7" />
+                <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.languages")}</h3>
               </div>
-              <ul className="space-y-2 font-mono text-xs">
-                <li className="flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
-                  {t("lang.portuguese")}
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
-                  {t("lang.english")}
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-foreground"></span>
-                  {t("lang.spanish")}
-                </li>
-              </ul>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                  <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
+                  <span className="font-mono text-base">{t("lang.portuguese")}</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                  <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
+                  <span className="font-mono text-base">{t("lang.english")}</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                  <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
+                  <span className="font-mono text-base">{t("lang.spanish")}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Software Section */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex items-center gap-3 mb-6">
-            <Code2 className="w-6 h-6" />
-            <h3 className="font-display text-2xl font-bold uppercase tracking-tight">{t("section.software")}</h3>
+        <div className="pt-12 border-t border-border">
+          <div className="flex items-center gap-3 mb-8">
+            <Code2 className="w-8 h-8" />
+            <h3 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight">{t("section.software")}</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="p-4 rounded-lg bg-background border border-border">
-              <p className="font-bold text-sm mb-2">Design</p>
-              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 rounded-lg bg-background border border-border">
+              <p className="font-bold text-base mb-4">Design</p>
+              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
                 <li>Photoshop</li>
                 <li>Illustrator</li>
                 <li>InDesign</li>
               </ul>
             </div>
-            <div className="p-4 rounded-lg bg-background border border-border">
-              <p className="font-bold text-sm mb-2">Motion</p>
-              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+            <div className="p-6 rounded-lg bg-background border border-border">
+              <p className="font-bold text-base mb-4">Motion</p>
+              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
                 <li>After Effects</li>
               </ul>
             </div>
-            <div className="p-4 rounded-lg bg-background border border-border">
-              <p className="font-bold text-sm mb-2">UI/UX</p>
-              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+            <div className="p-6 rounded-lg bg-background border border-border">
+              <p className="font-bold text-base mb-4">UI/UX</p>
+              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
                 <li>Figma</li>
               </ul>
             </div>
-            <div className="p-4 rounded-lg bg-background border border-border">
-              <p className="font-bold text-sm mb-2">AI</p>
-              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+            <div className="p-6 rounded-lg bg-background border border-border">
+              <p className="font-bold text-base mb-4">AI</p>
+              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
                 <li>Midjourney</li>
                 <li>ChatGPT</li>
               </ul>
