@@ -55,6 +55,7 @@ export interface Project {
   category: string;
   year: string;
   image: string;
+  preserveSize?: boolean;
 }
 
 export interface Client {
@@ -79,8 +80,8 @@ export const CLIENTS: Client[] = [
       { id: "betmgm-5", title: "Fortune Tiger", category: "Game Asset", year: "2024", image: betmgmFortune },
       { id: "betmgm-6", title: "Vegas Friday", category: "Campaign", year: "2024", image: betmgmVegas },
       { id: "betmgm-7", title: "Campaign KV 2", category: "Social Media", year: "2024", image: betmgmKv2 },
-      { id: "betmgm-8", title: "Vira Lata Caramelo", category: "Banner Ads", year: "2024", image: betmgmViraLata },
-      { id: "betmgm-9", title: "Gold Blitz", category: "Banner Ads", year: "2024", image: betmgmGoldBlitz },
+      { id: "betmgm-8", title: "Vira Lata Caramelo", category: "Banner Ads", year: "2024", image: betmgmViraLata, preserveSize: true },
+      { id: "betmgm-9", title: "Gold Blitz", category: "Banner Ads", year: "2024", image: betmgmGoldBlitz, preserveSize: true },
       { id: "betmgm-10", title: "Banner 970x250", category: "Digital Ads", year: "2024", image: betmgmBanner },
       { id: "betmgm-11", title: "Campaign Asset", category: "Digital", year: "2024", image: betmgm1 },
       { id: "betmgm-12", title: "Divirta-se Jackpot", category: "Key Visual", year: "2024", image: betmgmDivirta },
@@ -142,7 +143,7 @@ export const CLIENTS: Client[] = [
       { id: "banco-1", title: "BB. Fã do Surfe Brasileiro", category: "Sports Campaign", year: "2024", image: bancoCircuitoWsl },
       { id: "banco-2", title: "Sustentabilidade - Economia Verde", category: "Environmental", year: "2024", image: bancoEconomia },
       { id: "banco-3", title: "Dia da Mulher Negra Latino-Americana", category: "Social Impact", year: "2024", image: bancoFrame },
-      { id: "banco-4", title: "Sustentabilidade - Peças Digitais", category: "Digital Campaign", year: "2024", image: bancoSustentabilidade300 },
+      { id: "banco-4", title: "Sustentabilidade - Peças Digitais", category: "Digital Campaign", year: "2024", image: bancoSustentabilidade300, preserveSize: true },
       { id: "banco-5", title: "Empreendedorismo Feminino", category: "Social Program", year: "2024", image: banco01 },
       { id: "banco-6", title: "Ações de Impacto Social", category: "Corporate Social", year: "2024", image: banco02 },
       { id: "banco-7", title: "A Gente se Importa", category: "Brand Campaign", year: "2024", image: banco03 },

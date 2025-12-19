@@ -7,6 +7,7 @@ export interface Project {
   category: string;
   image: string;
   year: string;
+  preserveSize?: boolean;
 }
 
 interface ProjectCardProps {
@@ -25,11 +26,15 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative">
+      <div className="relative flex items-center justify-center">
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-auto transition-all duration-500 ease-out group-hover:scale-[1.02]"
+          className={`transition-all duration-500 ease-out group-hover:scale-[1.02] ${
+            project.preserveSize 
+              ? "h-auto max-w-full" 
+              : "w-full h-auto"
+          }`}
         />
         
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
