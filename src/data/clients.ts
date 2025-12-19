@@ -37,6 +37,8 @@ import audiQ8Wide from "@assets/audi_extracted/AUDI_Q8_Consideracao_1920×320.pn
 import audiQ8Medium from "@assets/audi_extracted/AUDI_Q8_Consideracao_1200×628.png";
 import audiQ8Tall from "@assets/audi_extracted/AUDI_Q8_Consideracao_160x600.png";
 
+import bancoFi from "@assets/banco_do_brasil_extracted/1.png";
+
 export interface Project {
   id: string;
   title: string;
@@ -119,6 +121,18 @@ export const CLIENTS: Client[] = [
       { id: "audi-3", title: "Q8 Banner Wide", category: "Digital Ads", year: "2024", image: audiQ8Wide },
       { id: "audi-4", title: "Q8 Campaign", category: "Digital Ads", year: "2024", image: audiQ8Medium },
       { id: "audi-5", title: "Q8 Tower", category: "Digital Ads", year: "2024", image: audiQ8Tall },
+    ]
+  },
+  {
+    id: "banco-do-brasil",
+    name: "Banco do Brasil",
+    descriptionKey: "client.banco",
+    coverImage: bancoFi,
+    projects: [
+      { id: "banco-1", title: "Campanha Digital", category: "Digital Campaign", year: "2024", image: bancoFi },
+      { id: "banco-2", title: "Material Institucional", category: "Branding", year: "2024", image: bancoFi },
+      { id: "banco-3", title: "Social Media", category: "Social Media", year: "2024", image: bancoFi },
+      { id: "banco-4", title: "Peça Promocional", category: "Advertising", year: "2024", image: bancoFi },
     ]
   }
 ];
