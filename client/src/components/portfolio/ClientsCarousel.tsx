@@ -23,14 +23,6 @@ const CLIENTS = [
   "Nestlé",
   "Santander",
   "C&A",
-  "Tim",
-  "Amil",
-  "Marisa",
-  "Coca-Cola",
-  "Samsung",
-  "Sony",
-  "Microsoft",
-  "Apple",
 ];
 
 const COLORS = [
