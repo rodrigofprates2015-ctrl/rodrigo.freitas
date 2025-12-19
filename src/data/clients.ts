@@ -58,6 +58,12 @@ import akaiBanner4 from "@assets/Banner4_1766168578602.jpg";
 import akaiBanner5 from "@assets/Banner5_1766168578602.jpg";
 import akaiNati from "@assets/BannerBanner_Nati_1_1766168578603.jpg";
 import akaiClear from "@assets/BannerClear_1766168578603.jpg";
+import akaiBraé from "@assets/BannerBraé_1766170128301.jpg";
+import akaiBraéMob from "@assets/BannerBraémob_1766170128302.jpg";
+import akaiBanner1Mob from "@assets/Banner1Mob_1766170128302.jpg";
+import akaiBanner2Mob from "@assets/Banner2Mob_1766170128302.jpg";
+import akaiBanner4Mob from "@assets/Banner4Mob_1766170128302.jpg";
+import akaiBanner5Mob from "@assets/Banner5Mob_1766170128303.jpg";
 
 // Brand Logos
 import logoGetnet from "@assets/Getnet_1766125097695.png";
@@ -186,6 +192,12 @@ export const CLIENTS: Client[] = [
       { id: "akai-6", title: "VitaDerm Produtos", category: "Skincare Campaign", year: "2024", image: akaiBanner5 },
       { id: "akai-7", title: "Nati Esmaltes", category: "Beauty Campaign", year: "2024", image: akaiNati },
       { id: "akai-8", title: "Clear Shampoo", category: "Product Campaign", year: "2024", image: akaiClear },
+      { id: "akai-9", title: "Linha BRAÉ", category: "Product Launch", year: "2024", image: akaiBraé, preserveSize: true },
+      { id: "akai-10", title: "Linha BRAÉ Mobile", category: "Product Launch", year: "2024", image: akaiBraéMob },
+      { id: "akai-11", title: "Honey Hair Campaign", category: "Hair Care Campaign", year: "2024", image: akaiBanner1Mob },
+      { id: "akai-12", title: "SOS Bomba Campaign", category: "Product Campaign", year: "2024", image: akaiBanner2Mob },
+      { id: "akai-13", title: "Elseve Campaign Mobile", category: "Beauty Campaign", year: "2024", image: akaiBanner4Mob },
+      { id: "akai-14", title: "VitaDerm Campaign Mobile", category: "Skincare Campaign", year: "2024", image: akaiBanner5Mob },
     ]
   }
 ];
