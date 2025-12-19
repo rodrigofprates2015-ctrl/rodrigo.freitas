@@ -21,7 +21,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <LanguageProvider>
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
