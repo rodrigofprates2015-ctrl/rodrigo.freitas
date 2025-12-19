@@ -76,7 +76,16 @@ import logoAvon from "@assets/avon_1766125097696.png";
 import logoBetmgm from "@assets/betmgm_1766125097697.png";
 import logoCea from "@assets/CEA_1766125097697.png";
 import logoBancoDoBrasil from "@assets/image_1766125138397.png";
+
+// Zeekr Campaign
 import zeekrBanner from "@assets/zeekr_extracted/Zeekr_7X_Banner.png";
+import zeekrStep1 from "@assets/zeekr_extracted/Zeekr_Step1_Banner.png";
+import zeekrStep2 from "@assets/zeekr_extracted/Zeekr_Step2_Logo.png";
+import zeekrCar from "@assets/zeekr_extracted/Zeekr_Car_Vertical.png";
+import zeekrSquare from "@assets/zeekr_extracted/Zeekr_Square.png";
+import zeekrVertical from "@assets/zeekr_extracted/Zeekr_Vertical.png";
+import zeekrHorizontal from "@assets/zeekr_extracted/Zeekr_Horizontal.png";
+import zeekrCrop from "@assets/zeekr_extracted/Zeekr_Crop.png";
 
 export interface Project {
   id: string;
@@ -211,7 +220,14 @@ export const CLIENTS: Client[] = [
     descriptionKey: "client.zeekr",
     coverImage: zeekrBanner,
     projects: [
-      { id: "zeekr-1", title: "Zeekr 7X - Sinta Cada Jornada", category: "Product Launch", year: "2024", image: zeekrBanner },
+      { id: "zeekr-1", title: "Zeekr 7X - Banner Principal", category: "Product Launch", year: "2024", image: zeekrBanner },
+      { id: "zeekr-2", title: "Zeekr 7X - Passo 1", category: "Campaign Design", year: "2024", image: zeekrStep1 },
+      { id: "zeekr-3", title: "Zeekr 7X - Passo 2 Logo", category: "Brand Identity", year: "2024", image: zeekrStep2 },
+      { id: "zeekr-4", title: "Zeekr 7X - Carro Vertical", category: "Product Photography", year: "2024", image: zeekrCar },
+      { id: "zeekr-5", title: "Zeekr 7X - Quadrado", category: "Social Media", year: "2024", image: zeekrSquare },
+      { id: "zeekr-6", title: "Zeekr 7X - Vertical", category: "Digital Asset", year: "2024", image: zeekrVertical },
+      { id: "zeekr-7", title: "Zeekr 7X - Horizontal", category: "Banner Ads", year: "2024", image: zeekrHorizontal },
+      { id: "zeekr-8", title: "Zeekr 7X - Destaque", category: "Campaign Asset", year: "2024", image: zeekrCrop },
     ]
   }
 ];
