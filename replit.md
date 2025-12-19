@@ -6,10 +6,13 @@ A personal portfolio website for Rodrigo Freitas, a graphic designer specializin
 
 ## Recent Changes (December 2025)
 
-- **Restructured portfolio display**: Home page now shows client cover cards instead of all projects
-- **Added client detail pages**: Each client has a dedicated page at `/client/:id` showing all their artworks
-- **Mobile responsive carousel**: On mobile devices, client covers display in a swipeable carousel with navigation buttons
-- **New data structure**: Centralized client data in `client/src/data/clients.ts`
+- **Enhanced Profile Section**: Expanded about text, added icons for all sections (About, Education, Experience, Languages, Clients, Software)
+- **Added Languages Section**: Portuguese (Native), English (Intermediate), Spanish (Advanced)
+- **New Clients Carousel**: Interactive carousel displaying clients in grid format with navigation arrows and indicators
+- **Improved Software Section**: Reorganized into 4 categorized cards (Design, Motion, UI/UX, AI)
+- **Fixed Project Modal**: Client field now shows brand name (e.g., "Avon") instead of "Studio [title]"
+- **Removed Grayscale Filter**: Project images now display in vibrant colors across all pages
+- **Added 5 New BetMGM Images**: Including Divirta-se, Milionário, and Corinthians betting cards
 
 ## User Preferences
 
@@ -23,6 +26,7 @@ Preferred communication style: Simple, everyday language.
 - **State Management**: TanStack React Query for server state, React Context for theme and language
 - **Styling**: Tailwind CSS v4 with shadcn/ui component library (New York style)
 - **Animations**: Framer Motion for page transitions and interactive elements
+- **Carousels**: Embla Carousel for both client covers and clients listing
 - **Layout**: Masonry grid using react-masonry-css for project galleries
 
 ### Backend Architecture
@@ -41,7 +45,7 @@ Preferred communication style: Simple, everyday language.
 - **Monorepo Structure**: Client code in `client/`, server in `server/`, shared types in `shared/`
 - **Path Aliases**: `@/` for client source, `@shared/` for shared code, `@assets/` for attached assets
 - **Component Organization**: UI primitives in `components/ui/`, feature components in `components/layout/` and `components/portfolio/`
-- **Internationalization**: Context-based language provider with translation key lookups
+- **Internationalization**: Context-based language provider with translation key lookups for Portuguese, English, and Spanish
 
 ### Build Configuration
 - Development: Vite dev server with HMR, proxied through Express
@@ -56,7 +60,7 @@ Preferred communication style: Simple, everyday language.
 
 ### UI Components
 - **Radix UI**: Headless component primitives (dialog, dropdown, tabs, etc.)
-- **Embla Carousel**: Carousel functionality
+- **Embla Carousel**: Carousel functionality for both client covers and clients display
 - **cmdk**: Command palette component
 
 ### Session Management

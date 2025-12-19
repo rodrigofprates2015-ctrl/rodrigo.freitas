@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { CLIENTS } from "@/data/clients";
+import { ClientsCarousel } from "@/components/portfolio/ClientsCarousel";
 import { motion } from "framer-motion";
 import { ArrowDown, ChevronLeft, ChevronRight, BookOpen, Briefcase, Code2, Globe, Award } from "lucide-react";
 import { useLanguage } from "@/lib/language";
@@ -316,42 +317,45 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Row: Clients & Software */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 pt-8 border-t border-border">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Award className="w-5 h-5" />
-              <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.clients")}</h3>
-            </div>
-            <ul className="grid grid-cols-2 gap-2 font-mono text-xs">
-              <li>BetMGM</li>
-              <li>Avon</li>
-              <li>GetNet</li>
-              <li>Audi</li>
-              <li>Banco do Brasil</li>
-              <li>Nestlé</li>
-              <li>Santander</li>
-              <li>C&A</li>
-              <li>Tim</li>
-              <li>Amil</li>
-              <li>Marisa</li>
-            </ul>
+        {/* Software Section */}
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="flex items-center gap-3 mb-6">
+            <Code2 className="w-6 h-6" />
+            <h3 className="font-display text-2xl font-bold uppercase tracking-tight">{t("section.software")}</h3>
           </div>
-
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Code2 className="w-5 h-5" />
-              <h3 className="font-display text-lg font-bold uppercase tracking-tight">{t("section.software")}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="p-4 rounded-lg bg-background border border-border">
+              <p className="font-bold text-sm mb-2">Design</p>
+              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+                <li>Photoshop</li>
+                <li>Illustrator</li>
+                <li>InDesign</li>
+              </ul>
             </div>
-            <ul className="space-y-2 font-mono text-xs">
-              <li>Photoshop, Illustrator</li>
-              <li>After Effects, InDesign</li>
-              <li>Figma</li>
-              <li>Midjourney AI, ChatGPT AI</li>
-            </ul>
+            <div className="p-4 rounded-lg bg-background border border-border">
+              <p className="font-bold text-sm mb-2">Motion</p>
+              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+                <li>After Effects</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-background border border-border">
+              <p className="font-bold text-sm mb-2">UI/UX</p>
+              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+                <li>Figma</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-lg bg-background border border-border">
+              <p className="font-bold text-sm mb-2">AI</p>
+              <ul className="space-y-1 font-mono text-xs text-muted-foreground">
+                <li>Midjourney</li>
+                <li>ChatGPT</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
+      <ClientsCarousel title={t("section.clients")} subtitle="Empresas e marcas com as quais colaborei" />
 
       <footer className="px-4 md:px-8 py-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-col">
