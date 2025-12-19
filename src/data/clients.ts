@@ -49,6 +49,16 @@ import banco03 from "@assets/03_1766124534216.jpg";
 import banco04 from "@assets/04_1766124534217.jpg";
 import bancoEconomia from "@assets/2_1766124534216.png";
 
+// Brand Logos
+import logoGetnet from "@assets/Getnet_1766125097695.png";
+import logoNestle from "@assets/Nestle_1766125097695.png";
+import logoSantander from "@assets/Santander_1766125097696.png";
+import logoAudi from "@assets/audi_1766125097696.png";
+import logoAvon from "@assets/avon_1766125097696.png";
+import logoBetmgm from "@assets/betmgm_1766125097697.png";
+import logoCea from "@assets/CEA_1766125097697.png";
+import logoBancoDoBrasil from "@assets/image_1766125138397.png";
+
 export interface Project {
   id: string;
   title: string;

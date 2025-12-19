@@ -8,21 +8,34 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import logoGetnet from "@assets/Getnet_1766125097695.png";
+import logoNestle from "@assets/Nestle_1766125097695.png";
+import logoSantander from "@assets/Santander_1766125097696.png";
+import logoAudi from "@assets/audi_1766125097696.png";
+import logoAvon from "@assets/avon_1766125097696.png";
+import logoBetmgm from "@assets/betmgm_1766125097697.png";
+import logoCea from "@assets/CEA_1766125097697.png";
+import logoBancoDoBrasil from "@assets/image_1766125138397.png";
 
 interface ClientsCarouselProps {
   title: string;
   subtitle?: string;
 }
 
-const CLIENTS = [
-  "BetMGM",
-  "Avon",
-  "GetNet",
-  "Audi",
-  "Banco do Brasil",
-  "Nestlé",
-  "Santander",
-  "C&A",
+interface ClientLogo {
+  name: string;
+  logo: string;
+}
+
+const CLIENTS: ClientLogo[] = [
+  { name: "BetMGM", logo: logoBetmgm },
+  { name: "Avon", logo: logoAvon },
+  { name: "GetNet", logo: logoGetnet },
+  { name: "Audi", logo: logoAudi },
+  { name: "Banco do Brasil", logo: logoBancoDoBrasil },
+  { name: "Nestlé", logo: logoNestle },
+  { name: "Santander", logo: logoSantander },
+  { name: "C&A", logo: logoCea },
 ];
 
 function ClientGrid({ startIndex }: { startIndex: number }) {
@@ -33,15 +46,18 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
       {clientsInSlide.map((client, idx) => {
         return (
           <motion.div
-            key={`${client}-${idx}`}
+            key={`${client.name}-${idx}`}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
             className="p-4 rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center h-32 cursor-pointer"
+            data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
           >
-            <span className="text-center font-display font-bold text-lg md:text-xl uppercase tracking-tight line-clamp-2">
-              {client}
-            </span>
+            <img 
+              src={client.logo} 
+              alt={client.name}
+              className="max-w-full max-h-full object-contain"
+            />
           </motion.div>
         );
       })}
