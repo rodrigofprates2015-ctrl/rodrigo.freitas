@@ -19,24 +19,18 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <motion.div
       layoutId={`project-${project.id}`}
-      className={`group relative cursor-pointer overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-4 rounded-sm ${
-        project.preserveSize ? "w-auto" : "w-full"
-      }`}
+      className="group relative cursor-pointer overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-4 rounded-sm w-full"
       onClick={() => onClick(project)}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative flex items-center justify-center">
+      <div className="relative">
         <motion.img
           src={project.image}
           alt={project.title}
-          className={`transition-all duration-500 ease-out group-hover:scale-[1.02] ${
-            project.preserveSize 
-              ? "h-auto" 
-              : "w-full h-auto"
-          }`}
+          className="w-full h-auto transition-all duration-500 ease-out group-hover:scale-[1.02]"
         />
         
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
