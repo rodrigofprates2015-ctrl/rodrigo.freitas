@@ -58,7 +58,9 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
               alt={client.name}
               className={`object-contain brightness-0 dark:brightness-0 dark:invert ${
                 client.name === "Banco do Brasil" 
-                  ? "max-w-[230px] max-h-[168px]" 
+                  ? "max-w-[230px] max-h-[168px]"
+                  : client.name === "BetMGM"
+                  ? "max-w-[176px] max-h-[129px]"
                   : "max-w-[135px] max-h-[99px]"
               }`}
             />
