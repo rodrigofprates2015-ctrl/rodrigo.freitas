@@ -56,7 +56,7 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
             <img 
               src={client.logo} 
               alt={client.name}
-              className="max-w-[75px] max-h-[55px] object-contain brightness-0 dark:brightness-0 dark:invert"
+              className="max-w-[135px] max-h-[99px] object-contain brightness-0 dark:brightness-0 dark:invert"
             />
           </motion.div>
         );
