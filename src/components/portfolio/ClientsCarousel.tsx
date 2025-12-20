@@ -56,7 +56,11 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
             <img 
               src={client.logo} 
               alt={client.name}
-              className="max-w-[135px] max-h-[99px] object-contain brightness-0 dark:brightness-0 dark:invert"
+              className={`object-contain brightness-0 dark:brightness-0 dark:invert ${
+                client.name === "Banco do Brasil" 
+                  ? "max-w-[230px] max-h-[168px]" 
+                  : "max-w-[135px] max-h-[99px]"
+              }`}
             />
           </motion.div>
         );
