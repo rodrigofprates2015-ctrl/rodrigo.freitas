@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Imagens Grandes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 10px; }
+        .summary { background: #f0f9ff; border-left: 4px solid #0066cc; padding: 20px; margin-bottom: 30px; border-radius: 4px; }
+        .summary p { margin: 5px 0; color: #555; }
+        .summary strong { color: #0066cc; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: #f0f0f0; padding: 12px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f9f9f9; }
+        .size { font-weight: 600; color: #d9534f; }
+        .warning { color: #d9534f; font-weight: 600; }
+        .download-btn { background: #0066cc; color: white; padding: 15px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 30px; display: inline-block; text-decoration: none; }
+        .download-btn:hover { background: #0052a3; }
+        .note { background: #fff8e1; border-left: 4px solid #ff9800; padding: 15px; margin-top: 30px; border-radius: 4px; }
+        .note p { color: #666; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Relatório de Imagens Grandes - Otimização necessária</h1>
+        
+        <div class="summary">
+            <p><strong>Total de imagens grandes (>500KB):</strong> 42 imagens</p>
+            <p><strong>Espaço total ocupado:</strong> ~63 MB</p>
+            <p><strong>Recomendação:</strong> ⚠️ Estas imagens devem ser otimizadas para melhorar o desempenho do site</p>
+        </div>
+
+        <h2>Imagens encontradas (maiores que 500KB)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Arquivo</th>
+                    <th class="size">Tamanho</th>
+                    <th>Caminho</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>mockuop].png</td><td class="size">23M</td><td>getnet_extracted/</td></tr>
+                <tr><td>Poster trem.png</td><td class="size">3.2M</td><td>getnet_extracted/</td></tr>
+                <tr><td>_institucional kv 2_1920x1080.png</td><td class="size">3.2M</td><td>getnet_extracted/</td></tr>
+                <tr><td>_institucional kv 1_1920x1080.png</td><td class="size">3.2M</td><td>getnet_extracted/</td></tr>
+                <tr><td>_institucional kv 1_1080x1920.png</td><td class="size">3.2M</td><td>getnet_extracted/</td></tr>
+                <tr><td>_institucional kv 2_1080x1920.png</td><td class="size">2.9M</td><td>getnet_extracted/</td></tr>
+                <tr><td>AUDI_Q8_Consideracao_1200×628.png</td><td class="size">2.9M</td><td>audi_extracted/</td></tr>
+                <tr><td>KV2_1766113599926.png</td><td class="size">2.3M</td><td>root</td></tr>
+                <tr><td>KV_BF_Vegas Friday.png</td><td class="size">2.1M</td><td>betmgm_extracted/</td></tr>
+                <tr><td>image_1765942358671.png</td><td class="size">2.0M</td><td>root</td></tr>
+                <tr><td>KV1_1920x1080.png</td><td class="size">2.0M</td><td>getnet_extracted/</td></tr>
+                <tr><td>KV1_1080x1920.png</td><td class="size">2.0M</td><td>getnet_extracted/</td></tr>
+                <tr><td>BANNERSprodutos_1766168578599.jpg</td><td class="size">2.0M</td><td>root</td></tr>
+                <tr><td>_institucional kv 2_1080x1080.png</td><td class="size">1.9M</td><td>getnet_extracted/</td></tr>
+                <tr><td>BANNERSprodutosmobile_1766168578600.jpg</td><td class="size">1.9M</td><td>root</td></tr>
+                <tr><td>image_1766124832776.png</td><td class="size">1.8M</td><td>root</td></tr>
+                <tr><td>_institucional kv 1_1080x1080.png</td><td class="size">1.8M</td><td>getnet_extracted/</td></tr>
+                <tr><td>KV2_1080x1920.png</td><td class="size">1.7M</td><td>betmgm_extracted/</td></tr>
+                <tr><td>Avon_seruns_1000x1500.png</td><td class="size">1.6M</td><td>avon_extracted/</td></tr>
+                <tr><td>Avon_Jojoba_1000x1500.png</td><td class="size">1.6M</td><td>avon_extracted/</td></tr>
+                <tr><td>Audi_Behance_02.png</td><td class="size">1.6M</td><td>audi_extracted/</td></tr>
+                <tr><td>KV1_1080x1920.png</td><td class="size">1.5M</td><td>betmgm_extracted/</td></tr>
+                <tr><td>Gates of Olympus_KV 2_1280x720.png</td><td class="size">1.5M</td><td>betmgm_extracted/</td></tr>
+                <tr><td>FINAL LIBERTADORES_KV1_1080x1920.png</td><td class="size">1.5M</td><td>betmgm_extracted/</td></tr>
+                <tr><td>Audi_Behance_03.png</td><td class="size">1.5M</td><td>audi_extracted/</td></tr>
+                <tr><td>Avon_potinhos_seruns_1080x1080.png</td><td class="size">1.4M</td><td>avon_extracted/</td></tr>
+                <tr><td>Avon_potinhos_1080x1080.png</td><td class="size">1.4M</td><td>avon_extracted/</td></tr>
+                <tr><td>KV1_1766113599926.png</td><td class="size">1.3M</td><td>root</td></tr>
+                <tr><td>KV1_1080x1080.png</td><td class="size">1.3M</td><td>getnet_extracted/</td></tr>
+                <tr><td>Avon_potinhos_1000x1500.png</td><td class="size">1.3M</td><td>avon_extracted/</td></tr>
+                <tr><td>KV2_1920x1080.png</td><td class="size">1.2M</td><td>getnet_extracted/</td></tr>
+                <tr><td>Avon_potinhos_seruns_1000x1500.png</td><td class="size">1.1M</td><td>avon_extracted/</td></tr>
+                <tr><td>image_1766114688135.png</td><td class="size">868K</td><td>root</td></tr>
+                <tr><td>betmgm_1766125097697.png</td><td class="size">868K</td><td>root</td></tr>
+                <tr><td>KV2_1080x1080.png</td><td class="size">796K</td><td>getnet_extracted/</td></tr>
+                <tr><td>KV2_1080x1920.png</td><td class="size">736K</td><td>getnet_extracted/</td></tr>
+                <tr><td>FINAL LIBERTADORES_KV2_800x800.png</td><td class="size">724K</td><td>betmgm_extracted/</td></tr>
+                <tr><td>conta_embarcada_stories_desconto_1080x1920.png</td><td class="size">588K</td><td>getnet_extracted/</td></tr>
+                <tr><td>image_1766114123597.png</td><td class="size">572K</td><td>root</td></tr>
+                <tr><td>BannerBraé_1766170128301.jpg</td><td class="size">524K</td><td>root</td></tr>
+                <tr><td>BannerBraé_1766168711364.jpg</td><td class="size">524K</td><td>root</td></tr>
+                <tr><td>tela_2_1766124534215.png</td><td class="size">508K</td><td>root</td></tr>
+            </tbody>
+        </table>
+
+        <a href="imagens-para-otimizar.tar.gz" class="download-btn" download>⬇️ Baixar todas as imagens (63 MB)</a>
+
+        <div class="note">
+            <p><strong>📌 Como usar:</strong></p>
+            <p>1. Clique no botão acima para baixar o arquivo <code>imagens-para-otimizar.tar.gz</code></p>
+            <p>2. Extraia o arquivo em seu computador</p>
+            <p>3. Acesse <a href="https://tinypng.com" target="_blank">tinypng.com</a> ou <a href="https://tinyjpg.com" target="_blank">tinyjpg.com</a></p>
+            <p>4. Faça upload de todas as imagens para otimizar</p>
+            <p>5. Baixe as imagens otimizadas e substitua os arquivos originais</p>
+            <p><strong>Estimativa de redução:</strong> 40-80% do tamanho original (sem perder qualidade visual)</p>
+        </div>
+    </div>
+</body>
+</html>
