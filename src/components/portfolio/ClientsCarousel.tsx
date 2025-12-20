@@ -41,9 +41,10 @@ const CLIENTS: ClientLogo[] = [
 
 function ClientGrid({ startIndex, itemsPerSlide }: { startIndex: number; itemsPerSlide: number }) {
   const clientsInSlide = CLIENTS.slice(startIndex, startIndex + itemsPerSlide);
+  const isMobile = itemsPerSlide === 4;
   
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 w-full">
+    <div className={`grid ${isMobile ? 'grid-cols-2' : 'grid-cols-4'} ${isMobile ? 'gap-2' : 'gap-3'} w-full`}>
       {clientsInSlide.map((client, idx) => {
         return (
           <motion.div
@@ -51,18 +52,20 @@ function ClientGrid({ startIndex, itemsPerSlide }: { startIndex: number; itemsPe
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="p-2 md:p-4 rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center aspect-square md:h-32 cursor-pointer"
+            className={`${isMobile ? 'p-2' : 'p-4'} rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center ${isMobile ? 'aspect-square' : 'h-32'} cursor-pointer`}
             data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
           >
             <img 
               src={client.logo} 
               alt={client.name}
               className={`object-contain brightness-0 dark:brightness-0 dark:invert ${
-                client.name === "Banco do Brasil" 
-                  ? "max-w-[230px] max-h-[168px] md:max-w-[230px] md:max-h-[168px]"
-                  : client.name === "BetMGM"
-                  ? "max-w-[176px] max-h-[129px] md:max-w-[176px] md:max-h-[129px]"
-                  : "max-w-[135px] max-h-[99px] md:max-w-[135px] md:max-h-[99px]"
+                !isMobile && client.name === "Banco do Brasil" 
+                  ? "max-w-[230px] max-h-[168px]"
+                  : !isMobile && client.name === "BetMGM"
+                  ? "max-w-[176px] max-h-[129px]"
+                  : !isMobile
+                  ? "max-w-[135px] max-h-[99px]"
+                  : "max-w-[80%] max-h-[80%]"
               }`}
             />
           </motion.div>
