@@ -13,8 +13,8 @@ import logoNestle from "@assets/Nestle_1766125097695.png";
 import logoSantander from "@assets/Santander_1766125097696.png";
 import logoAudi from "@assets/audi_1766125097696.png";
 import logoAvon from "@assets/avon_1766125097696.png";
-import logoBetmgm from "@assets/betmgm_1766125097697.png";
-import logoCea from "@assets/CEA_1766125097697.png";
+import logoBetmgm from "@assets/Ativo_1logo__1766196603379.png";
+import logoCea from "@assets/image_1766196591499.png";
 import logoBancoDoBrasil from "@assets/image_1766125138397.png";
 
 interface ClientsCarouselProps {
