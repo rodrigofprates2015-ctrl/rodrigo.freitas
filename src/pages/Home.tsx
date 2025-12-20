@@ -253,26 +253,26 @@ export default function Home() {
               <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.experience")}</h3>
             </div>
             <div className="space-y-4">
-              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+              <a href="https://www.pointmedia.com.br/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Point Media, 2025</span>
-              </div>
-              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+              </a>
+              <a href="https://www.cps.sp.gov.br/etecs/etec-de-poa/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.teacher")}</span>
                 <span className="text-muted-foreground font-mono text-sm">ETEC de Poá, 2025</span>
-              </div>
-              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+              </a>
+              <a href="https://truther.to/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.senior")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Truther, 2025</span>
-              </div>
-              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+              </a>
+              <a href="https://www.nortemkt.com/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Norte Marketing, 2023-2024</span>
-              </div>
-              <div className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all">
+              </a>
+              <a href="https://www.bloomin.com.br/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.graphic")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Agência Bloomin, 2022-2023</span>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -329,29 +329,64 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-lg bg-background border border-border">
               <p className="font-bold text-base mb-4">Design</p>
-              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li>Photoshop</li>
-                <li>Illustrator</li>
-                <li>InDesign</li>
+              <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2 2h9v9H2V2zm11 0h9v9h-9V2zM2 13h9v9H2v-9zm11 0h9v9h-9v-9z"/>
+                  </svg>
+                  Photoshop
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z"/>
+                  </svg>
+                  Illustrator
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 4h16v16H4V4zm2 2v12h12V6H6z"/>
+                  </svg>
+                  InDesign
+                </li>
               </ul>
             </div>
             <div className="p-6 rounded-lg bg-background border border-border">
               <p className="font-bold text-base mb-4">Motion</p>
-              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li>After Effects</li>
+              <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7L8 5z"/>
+                  </svg>
+                  After Effects
+                </li>
               </ul>
             </div>
             <div className="p-6 rounded-lg bg-background border border-border">
               <p className="font-bold text-base mb-4">UI/UX</p>
-              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li>Figma</li>
+              <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z"/>
+                  </svg>
+                  Figma
+                </li>
               </ul>
             </div>
             <div className="p-6 rounded-lg bg-background border border-border">
               <p className="font-bold text-base mb-4">AI</p>
-              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li>Midjourney</li>
-                <li>ChatGPT</li>
+              <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                  </svg>
+                  Midjourney
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                  </svg>
+                  ChatGPT
+                </li>
               </ul>
             </div>
           </div>
@@ -359,6 +394,26 @@ export default function Home() {
       </section>
 
       <ClientsCarousel title={t("section.clients")} subtitle="Empresas e marcas com as quais colaborei" />
+
+      <section className="px-4 md:px-8 py-16 border-t border-border bg-secondary/30 flex flex-col items-center justify-center text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
+          Gostou do trabalho?
+        </h2>
+        <p className="text-muted-foreground mb-8 max-w-md">
+          Baixe meu currículo completo e entre em contato para discutir seus próximos projetos
+        </p>
+        <a 
+          href="https://www.behance.net/rodrigofreitas27" 
+          download
+          className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-bold rounded-md hover-elevate transition-all"
+          data-testid="button-download-resume"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Baixar Currículo
+        </a>
+      </section>
 
       <footer className="px-4 md:px-8 py-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-col">

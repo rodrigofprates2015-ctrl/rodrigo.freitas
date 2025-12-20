@@ -48,6 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     "client.akai": "Campanhas multimarca para portfólio de produtos Akai, Taiff, Salon Line, Pantene, Elseve, VitaDerm e outras. Design de banners, peças promocionais e identidades visuais para distribuição digital.",
     "client.banco": "Campanhas de impacto social, sustentabilidade e responsabilidade corporativa. Desenvolvimento de identidades visuais para programas de empreendedorismo, diversidade e ações ambientais.",
     "client.zeekr": "Design de campanha de lançamento de produto automotivo, desenvolvendo narrativas visuais premium para o novo modelo 7X, com foco em lifestyle e inovação.",
+    "client.behance": "Portfólio completo de projetos de design gráfico, campanhas digitais e identidades visuais. Confira meus trabalhos premiados e reconhecidos na comunidade de design.",
     "projects.count": "Projetos",
     "footer.rights": "© 2025 Rodrigo Freitas. Todos os direitos reservados."
   },
@@ -88,6 +89,7 @@ const translations: Record<Language, Record<string, string>> = {
     "client.akai": "Multi-brand campaigns for Akai product portfolio, Taiff, Salon Line, Pantene, Elseve, VitaDerm and more. Banner design, promotional pieces and visual identities for digital distribution.",
     "client.banco": "Social impact campaigns, sustainability and corporate responsibility. Development of visual identities for entrepreneurship programs, diversity initiatives, and environmental actions.",
     "client.zeekr": "Automotive product launch campaign design, developing premium visual narratives for the new 7X model, with a focus on lifestyle and innovation.",
+    "client.behance": "Complete portfolio of graphic design projects, digital campaigns, and visual identities. Check out my award-winning work recognized by the design community.",
     "projects.count": "Projects",
     "footer.rights": "© 2025 Rodrigo Freitas. All rights reserved."
   },
@@ -128,6 +130,7 @@ const translations: Record<Language, Record<string, string>> = {
     "client.akai": "Campañas multimarca para cartera de productos Akai, Taiff, Salon Line, Pantene, Elseve, VitaDerm y más. Diseño de banners, piezas promocionales e identidades visuales para distribución digital.",
     "client.banco": "Campañas de impacto social, sostenibilidad y responsabilidad corporativa. Desarrollo de identidades visuales para programas de emprendimiento, iniciativas de diversidad y acciones ambientales.",
     "client.zeekr": "Diseño de campaña de lanzamiento de producto automotriz, desarrollando narrativas visuales premium para el nuevo modelo 7X, con enfoque en estilo de vida e innovación.",
+    "client.behance": "Portafolio completo de proyectos de diseño gráfico, campañas digitales e identidades visuales. Consulta mis trabajos premiados y reconocidos por la comunidad del diseño.",
     "projects.count": "Proyectos",
     "footer.rights": "© 2025 Rodrigo Freitas. Todos los derechos reservados."
   }

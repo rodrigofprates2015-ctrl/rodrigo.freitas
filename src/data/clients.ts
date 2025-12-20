@@ -87,6 +87,9 @@ import zeekrVertical from "@assets/zeekr_extracted/Zeekr_Vertical.png";
 import zeekrHorizontal from "@assets/zeekr_extracted/Zeekr_Horizontal.png";
 import zeekrCrop from "@assets/zeekr_extracted/Zeekr_Crop.png";
 
+// Behance Portfolio
+import behanceCover from "@assets/generated_images/behance_portfolio_cover_image_blue.png";
+
 export interface Project {
   id: string;
   title: string;
@@ -228,6 +231,15 @@ export const CLIENTS: Client[] = [
       { id: "zeekr-6", title: "Zeekr 7X - Vertical", category: "Digital Asset", year: "2024", image: zeekrVertical },
       { id: "zeekr-7", title: "Zeekr 7X - Horizontal", category: "Banner Ads", year: "2024", image: zeekrHorizontal },
       { id: "zeekr-8", title: "Zeekr 7X - Destaque", category: "Campaign Asset", year: "2024", image: zeekrCrop },
+    ]
+  },
+  {
+    id: "behance",
+    name: "Behance",
+    descriptionKey: "client.behance",
+    coverImage: behanceCover,
+    projects: [
+      { id: "behance-1", title: "Ver Mais Projetos", category: "Portfolio", year: "2024", image: behanceCover },
     ]
   }
 ];
