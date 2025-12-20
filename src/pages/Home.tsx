@@ -403,8 +403,8 @@ export default function Home() {
           Baixe meu currículo completo e entre em contato para discutir seus próximos projetos
         </p>
         <a 
-          href="https://www.behance.net/rodrigofreitas27" 
-          download
+          href="/Curriculo2026-compactado_1766200235837.pdf" 
+          download="Rodrigo_Freitas_Curriculo.pdf"
           className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-bold rounded-md hover-elevate transition-all"
           data-testid="button-download-resume"
         >

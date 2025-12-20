@@ -88,7 +88,7 @@ import zeekrHorizontal from "@assets/zeekr_extracted/Zeekr_Horizontal.png";
 import zeekrCrop from "@assets/zeekr_extracted/Zeekr_Crop.png";
 
 // Behance Portfolio
-import behanceCover from "@assets/generated_images/behance_portfolio_cover_image_blue.png";
+import behanceCover from "@assets/image_1766200064012.png";
 
 export interface Project {
   id: string;
