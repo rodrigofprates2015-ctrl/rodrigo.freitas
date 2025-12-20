@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import type { CarouselApi } from "@/components/ui/carousel";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Carousel,
   CarouselContent,
@@ -38,11 +39,11 @@ const CLIENTS: ClientLogo[] = [
   { name: "C&A", logo: logoCea },
 ];
 
-function ClientGrid({ startIndex }: { startIndex: number }) {
-  const clientsInSlide = CLIENTS.slice(startIndex, startIndex + 8);
+function ClientGrid({ startIndex, itemsPerSlide }: { startIndex: number; itemsPerSlide: number }) {
+  const clientsInSlide = CLIENTS.slice(startIndex, startIndex + itemsPerSlide);
   
   return (
-    <div className="grid grid-cols-4 gap-3 w-full">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 w-full">
       {clientsInSlide.map((client, idx) => {
         return (
           <motion.div
@@ -50,7 +51,7 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="p-4 rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center h-32 cursor-pointer"
+            className="p-2 md:p-4 rounded-lg bg-background border border-border hover-elevate transition-all duration-300 flex items-center justify-center aspect-square md:h-32 cursor-pointer"
             data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
           >
             <img 
@@ -58,10 +59,10 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
               alt={client.name}
               className={`object-contain brightness-0 dark:brightness-0 dark:invert ${
                 client.name === "Banco do Brasil" 
-                  ? "max-w-[230px] max-h-[168px]"
+                  ? "max-w-[80%] max-h-[80%]"
                   : client.name === "BetMGM"
-                  ? "max-w-[176px] max-h-[129px]"
-                  : "max-w-[135px] max-h-[99px]"
+                  ? "max-w-[80%] max-h-[80%]"
+                  : "max-w-[80%] max-h-[80%]"
               }`}
             />
           </motion.div>
@@ -74,6 +75,10 @@ function ClientGrid({ startIndex }: { startIndex: number }) {
 export function ClientsCarousel({ title, subtitle }: ClientsCarouselProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const isMobile = useIsMobile();
+
+  const itemsPerSlide = isMobile ? 4 : 8;
+  const totalSlides = Math.ceil(CLIENTS.length / itemsPerSlide);
 
   const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
   const scrollNext = useCallback(() => api?.scrollNext(), [api]);
@@ -92,8 +97,6 @@ export function ClientsCarousel({ title, subtitle }: ClientsCarouselProps) {
       api.off("select", onSelect);
     };
   }, [api]);
-
-  const totalSlides = Math.ceil(CLIENTS.length / 8);
 
   return (
     <section className="px-4 md:px-8 py-16 border-t border-border">
@@ -120,7 +123,7 @@ export function ClientsCarousel({ title, subtitle }: ClientsCarouselProps) {
           <CarouselContent className="-ml-2 md:-ml-4">
             {Array.from({ length: totalSlides }).map((_, slideIdx) => (
               <CarouselItem key={slideIdx} className="pl-2 md:pl-4 basis-full">
-                <ClientGrid startIndex={slideIdx * 8} />
+                <ClientGrid startIndex={slideIdx * itemsPerSlide} itemsPerSlide={itemsPerSlide} />
               </CarouselItem>
             ))}
           </CarouselContent>
