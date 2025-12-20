@@ -43,7 +43,7 @@ function ClientGrid({ startIndex, itemsPerSlide }: { startIndex: number; itemsPe
   const clientsInSlide = CLIENTS.slice(startIndex, startIndex + itemsPerSlide);
   
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 w-full">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 w-full">
       {clientsInSlide.map((client, idx) => {
         return (
           <motion.div
@@ -59,10 +59,10 @@ function ClientGrid({ startIndex, itemsPerSlide }: { startIndex: number; itemsPe
               alt={client.name}
               className={`object-contain brightness-0 dark:brightness-0 dark:invert ${
                 client.name === "Banco do Brasil" 
-                  ? "max-w-[80%] max-h-[80%]"
+                  ? "max-w-[230px] max-h-[168px] md:max-w-[230px] md:max-h-[168px]"
                   : client.name === "BetMGM"
-                  ? "max-w-[80%] max-h-[80%]"
-                  : "max-w-[80%] max-h-[80%]"
+                  ? "max-w-[176px] max-h-[129px] md:max-w-[176px] md:max-h-[129px]"
+                  : "max-w-[135px] max-h-[99px] md:max-w-[135px] md:max-h-[99px]"
               }`}
             />
           </motion.div>
