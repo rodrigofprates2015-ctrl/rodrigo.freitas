@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export interface Project {
   id: string;
@@ -16,15 +17,14 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
+  const scrollRevealProps = useScrollReveal({ type: "fadeInScale" });
+  
   return (
     <motion.div
       layoutId={`project-${project.id}`}
       className="group relative cursor-pointer overflow-hidden bg-zinc-100 dark:bg-zinc-900 mb-4 rounded-sm w-full"
       onClick={() => onClick(project)}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...scrollRevealProps}
     >
       <div className="relative">
         <motion.img

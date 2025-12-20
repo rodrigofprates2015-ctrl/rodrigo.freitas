@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { useState, useCallback, useEffect } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
+import { useScrollReveal, staggerContainer, fadeInUpVariant, slideInLeftVariant, slideInRightVariant, scaleInVariant } from "@/hooks/useScrollReveal";
 
 interface ClientCoverProps {
   client: typeof CLIENTS[0];
@@ -199,7 +200,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className="max-w-3xl z-10"
         >
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-4">
@@ -242,104 +243,258 @@ export default function Home() {
 
       <section id="about" className="px-4 md:px-8 py-20 border-t border-border bg-secondary/30">
         {/* About Section - Full Width Hero */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
+        <motion.div
+          className="mb-20"
+          {...staggerContainer(0.2, 0.1)}
+        >
+          <motion.div 
+            className="flex items-center gap-3 mb-8"
+            variants={fadeInUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <Award className="w-8 h-8" />
             <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight">
               {t("section.about")}
             </h2>
-          </div>
+          </motion.div>
           <div className="max-w-4xl space-y-6 text-lg md:text-xl font-sans font-light leading-relaxed text-foreground">
-            <p className="text-base md:text-lg">{t("about.p1")}</p>
-            <p className="text-base md:text-lg">{t("about.p2")}</p>
-            <p className="text-base md:text-lg">Com mais de 5 anos de experiência, desenvolvo soluções visuais estratégicas que conectam marca e audiência. Meu trabalho combina pesquisa, criatividade e rigor técnico para entregar resultados mensuráveis.</p>
+            <motion.p 
+              className="text-base md:text-lg"
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {t("about.p1")}
+            </motion.p>
+            <motion.p 
+              className="text-base md:text-lg"
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
+            >
+              {t("about.p2")}
+            </motion.p>
+            <motion.p 
+              className="text-base md:text-lg"
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+            >
+              Com mais de 5 anos de experiência, desenvolvo soluções visuais estratégicas que conectam marca e audiência. Meu trabalho combina pesquisa, criatividade e rigor técnico para entregar resultados mensuráveis.
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Experience & Education Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Experience Section */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
+          <motion.div
+            {...staggerContainer(0.15, 0.05)}
+          >
+            <motion.div 
+              className="flex items-center gap-3 mb-8"
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <Briefcase className="w-7 h-7" />
               <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.experience")}</h3>
-            </div>
+            </motion.div>
             <div className="space-y-4">
-              <a href="https://www.pointmedia.com.br/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
+              <motion.a 
+                href="https://www.pointmedia.com.br/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block"
+                variants={scaleInVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Point Media, 2025</span>
-              </a>
-              <a href="https://www.cps.sp.gov.br/etecs/etec-de-poa/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
+              </motion.a>
+              <motion.a 
+                href="https://www.cps.sp.gov.br/etecs/etec-de-poa/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block"
+                variants={scaleInVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.15, ease: "easeInOut" }}
+              >
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.teacher")}</span>
                 <span className="text-muted-foreground font-mono text-sm">ETEC de Poá, 2025</span>
-              </a>
-              <a href="https://truther.to/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
+              </motion.a>
+              <motion.a 
+                href="https://truther.to/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block"
+                variants={scaleInVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+              >
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.senior")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Truther, 2025</span>
-              </a>
-              <a href="https://www.nortemkt.com/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
+              </motion.a>
+              <motion.a 
+                href="https://www.nortemkt.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block"
+                variants={scaleInVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.45, ease: "easeInOut" }}
+              >
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.art_director")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Norte Marketing, 2023-2024</span>
-              </a>
-              <a href="https://www.bloomin.com.br/" target="_blank" rel="noopener noreferrer" className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block">
+              </motion.a>
+              <motion.a 
+                href="https://www.bloomin.com.br/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-6 rounded-lg bg-background border border-border hover-elevate transition-all block"
+                variants={scaleInVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.6, ease: "easeInOut" }}
+              >
                 <span className="block font-bold text-base md:text-lg mb-1">{t("exp.graphic")}</span>
                 <span className="text-muted-foreground font-mono text-sm">Agência Bloomin, 2022-2023</span>
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Education & Languages */}
-          <div className="space-y-16">
+          <motion.div 
+            className="space-y-16"
+            {...staggerContainer(0.15, 0.05)}
+          >
             {/* Education */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.div className="flex items-center gap-3 mb-8">
                 <BookOpen className="w-7 h-7" />
                 <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.education")}</h3>
-              </div>
+              </motion.div>
               <div className="space-y-4">
-                <div className="p-6 rounded-lg bg-background border border-border">
+                <motion.div 
+                  className="p-6 rounded-lg bg-background border border-border"
+                  variants={scaleInVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <span className="block font-bold text-base md:text-lg mb-1">{t("edu.pos")}</span>
                   <span className="text-muted-foreground font-mono text-sm">{t("edu.pos.school")}</span>
-                </div>
-                <div className="p-6 rounded-lg bg-background border border-border">
+                </motion.div>
+                <motion.div 
+                  className="p-6 rounded-lg bg-background border border-border"
+                  variants={scaleInVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.15, ease: "easeInOut" }}
+                >
                   <span className="block font-bold text-base md:text-lg mb-1">{t("edu.grad")}</span>
                   <span className="text-muted-foreground font-mono text-sm">{t("edu.grad.school")}</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Languages */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              variants={fadeInUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+            >
+              <motion.div className="flex items-center gap-3 mb-8">
                 <Globe className="w-7 h-7" />
                 <h3 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight">{t("section.languages")}</h3>
-              </div>
+              </motion.div>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                <motion.div 
+                  className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border"
+                  variants={scaleInVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
                   <span className="font-mono text-base">{t("lang.portuguese")}</span>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border"
+                  variants={scaleInVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.15, ease: "easeInOut" }}
+                >
                   <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
                   <span className="font-mono text-base">{t("lang.english")}</span>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border">
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-3 p-4 rounded-lg bg-background border border-border"
+                  variants={scaleInVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+                >
                   <span className="inline-block w-3 h-3 rounded-full bg-foreground"></span>
                   <span className="font-mono text-base">{t("lang.spanish")}</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Software Section */}
-        <div className="pt-12 border-t border-border">
-          <div className="flex items-center gap-3 mb-8">
+        <motion.div 
+          className="pt-12 border-t border-border"
+          {...staggerContainer(0.1, 0.05)}
+        >
+          <motion.div 
+            className="flex items-center gap-3 mb-8"
+            variants={fadeInUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <Code2 className="w-8 h-8" />
             <h3 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight">{t("section.software")}</h3>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-lg bg-background border border-border">
+            <motion.div 
+              className="p-6 rounded-lg bg-background border border-border"
+              variants={scaleInVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <p className="font-bold text-base mb-4">Design</p>
               <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
@@ -361,8 +516,15 @@ export default function Home() {
                   InDesign
                 </li>
               </ul>
-            </div>
-            <div className="p-6 rounded-lg bg-background border border-border">
+            </motion.div>
+            <motion.div 
+              className="p-6 rounded-lg bg-background border border-border"
+              variants={scaleInVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeInOut" }}
+            >
               <p className="font-bold text-base mb-4">Motion</p>
               <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
@@ -372,8 +534,15 @@ export default function Home() {
                   After Effects
                 </li>
               </ul>
-            </div>
-            <div className="p-6 rounded-lg bg-background border border-border">
+            </motion.div>
+            <motion.div 
+              className="p-6 rounded-lg bg-background border border-border"
+              variants={scaleInVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
+            >
               <p className="font-bold text-base mb-4">UI/UX</p>
               <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
@@ -383,8 +552,15 @@ export default function Home() {
                   Figma
                 </li>
               </ul>
-            </div>
-            <div className="p-6 rounded-lg bg-background border border-border">
+            </motion.div>
+            <motion.div 
+              className="p-6 rounded-lg bg-background border border-border"
+              variants={scaleInVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+            >
               <p className="font-bold text-base mb-4">AI</p>
               <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
@@ -400,20 +576,33 @@ export default function Home() {
                   ChatGPT
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <ClientsCarousel title={t("section.clients")} subtitle="Empresas e marcas com as quais colaborei" />
 
       <section className="px-4 md:px-8 py-16 border-t border-border bg-secondary/30 flex flex-col items-center justify-center text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
+        <motion.h2 
+          className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4"
+          {...fadeInUpVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Gostou do trabalho?
-        </h2>
-        <p className="text-muted-foreground mb-8 max-w-md">
+        </motion.h2>
+        <motion.p 
+          className="text-muted-foreground mb-8 max-w-md"
+          {...fadeInUpVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
+        >
           Baixe meu currículo completo e entre em contato para discutir seus próximos projetos
-        </p>
+        </motion.p>
         <a 
           href="/Curriculo2026-compactado_1766200235837.pdf" 
           download="Rodrigo_Freitas_Curriculo.pdf"

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import type { CarouselApi } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useScrollReveal, staggerContainer, fadeInUpVariant } from "@/hooks/useScrollReveal";
 import {
   Carousel,
   CarouselContent,
@@ -103,16 +104,32 @@ export function ClientsCarousel({ title, subtitle }: ClientsCarouselProps) {
 
   return (
     <section className="px-4 md:px-8 py-16 border-t border-border">
-      <div className="mb-8">
-        <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-2">
+      <motion.div 
+        className="mb-8"
+        {...staggerContainer(0.1, 0)}
+      >
+        <motion.h2 
+          className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-2"
+          variants={fadeInUpVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {title}
-        </h2>
+        </motion.h2>
         {subtitle && (
-          <p className="text-muted-foreground font-mono text-sm">
+          <motion.p 
+            className="text-muted-foreground font-mono text-sm"
+            variants={fadeInUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeInOut" }}
+          >
             {subtitle}
-          </p>
+          </motion.p>
         )}
-      </div>
+      </motion.div>
 
       <div className="relative">
         <Carousel
