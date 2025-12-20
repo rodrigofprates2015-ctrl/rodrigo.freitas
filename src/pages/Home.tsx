@@ -25,38 +25,50 @@ function ClientCover({ client, index }: ClientCoverProps) {
   const isMobile = useIsMobile();
   const coverImage = isMobile && client.coverImageMobile ? client.coverImageMobile : client.coverImage;
 
+  const content = (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative overflow-hidden rounded-md cursor-pointer aspect-[4/1] w-full"
+      data-testid={`card-client-${client.id}`}
+    >
+      <img
+        src={coverImage}
+        alt={client.name}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+        <h3 
+          className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase tracking-tight"
+          data-testid={`text-client-title-${client.id}`}
+        >
+          {client.name}
+        </h3>
+        <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
+          {t(client.descriptionKey)}
+        </p>
+        <div className="mt-3 flex items-center gap-2">
+          <span className="font-mono text-xs text-white/60 uppercase tracking-widest">
+            {client.projects.length} {t("projects.count")}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+
+  if (client.externalUrl) {
+    return (
+      <a href={client.externalUrl} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    );
+  }
+
   return (
     <Link href={`/client/${client.id}`}>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="group relative overflow-hidden rounded-md cursor-pointer aspect-[4/1] w-full"
-        data-testid={`card-client-${client.id}`}
-      >
-        <img
-          src={coverImage}
-          alt={client.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-          <h3 
-            className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase tracking-tight"
-            data-testid={`text-client-title-${client.id}`}
-          >
-            {client.name}
-          </h3>
-          <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
-            {t(client.descriptionKey)}
-          </p>
-          <div className="mt-3 flex items-center gap-2">
-            <span className="font-mono text-xs text-white/60 uppercase tracking-widest">
-              {client.projects.length} {t("projects.count")}
-            </span>
-          </div>
-        </div>
-      </motion.div>
+      {content}
     </Link>
   );
 }

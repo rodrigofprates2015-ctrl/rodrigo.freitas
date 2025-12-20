@@ -106,6 +106,7 @@ export interface Client {
   coverImage: string;
   coverImageMobile?: string;
   projects: Project[];
+  externalUrl?: string;
 }
 
 export const CLIENTS: Client[] = [
@@ -240,7 +241,8 @@ export const CLIENTS: Client[] = [
     coverImage: behanceCover,
     projects: [
       { id: "behance-1", title: "Ver Mais Projetos", category: "Portfolio", year: "2024", image: behanceCover },
-    ]
+    ],
+    externalUrl: "https://www.behance.net/rodrigofreitas27"
   }
 ];
 
