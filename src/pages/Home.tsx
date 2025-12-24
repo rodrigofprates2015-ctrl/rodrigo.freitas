@@ -47,14 +47,6 @@ function ClientCover({ client, index }: ClientCoverProps) {
         >
           {client.name}
         </h3>
-        <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
-          {t(client.descriptionKey)}
-        </p>
-        <div className="mt-3 flex items-center gap-2">
-          <span className="font-mono text-xs text-white/60 uppercase tracking-widest">
-            {client.projects.length} {t("projects.count")}
-          </span>
-        </div>
       </div>
     </motion.div>
   );
@@ -128,12 +120,6 @@ function MobileCarousel() {
                     <h3 className="font-display text-2xl font-bold text-white uppercase tracking-tight">
                       {client.name}
                     </h3>
-                    <p className="text-white/70 font-mono text-xs mt-2 line-clamp-2">
-                      {t(client.descriptionKey)}
-                    </p>
-                    <span className="font-mono text-xs text-white/60 mt-2 block">
-                      {client.projects.length} {t("projects.count")}
-                    </span>
                   </div>
                 </motion.div>
               </Link>
