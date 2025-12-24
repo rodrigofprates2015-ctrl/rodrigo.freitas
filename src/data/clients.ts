@@ -90,6 +90,18 @@ import zeekrCrop from "@assets/zeekr_extracted/Zeekr_Crop.png";
 // Behance Portfolio
 import behanceCover from "@assets/image_1766200064012.png";
 
+// BlueFit Campaign
+import bluefitBanner1 from "@assets/Artboard_9@2x_1766550391631.png";
+import bluefitBanner2 from "@assets/Artboard_10@2x_1766550391632.png";
+import bluefitBanner3 from "@assets/Artboard_16@2x_1766550391632.png";
+import bluefitBanner4 from "@assets/Artboard_17@2x_1766550391632.png";
+import bluefitCover from "@assets/1_1766550391632.png";
+import bluefitImage2 from "@assets/2_1766550391633.png";
+import bluefitImage6 from "@assets/6_1766550391633.png";
+import bluefitBannerCopy2 from "@assets/Artboard_6_copy_2@2x_1766550391633.png";
+import bluefitBannerCopy from "@assets/Artboard_6_copy@2x_1766550391634.png";
+import bluefitBanner6 from "@assets/Artboard_6@2x_1766550391634.png";
+
 export interface Project {
   id: string;
   title: string;
@@ -232,6 +244,24 @@ export const CLIENTS: Client[] = [
       { id: "zeekr-6", title: "Zeekr 7X - Vertical", category: "Digital Asset", year: "2024", image: zeekrVertical },
       { id: "zeekr-7", title: "Zeekr 7X - Horizontal", category: "Banner Ads", year: "2024", image: zeekrHorizontal },
       { id: "zeekr-8", title: "Zeekr 7X - Destaque", category: "Campaign Asset", year: "2024", image: zeekrCrop },
+    ]
+  },
+  {
+    id: "bluefit",
+    name: "BlueFit",
+    descriptionKey: "client.bluefit",
+    coverImage: bluefitCover,
+    projects: [
+      { id: "bluefit-1", title: "Campanha Principal", category: "Fitness Campaign", year: "2024", image: bluefitBanner1 },
+      { id: "bluefit-2", title: "Movimento é Blue", category: "Key Visual", year: "2024", image: bluefitBanner2 },
+      { id: "bluefit-3", title: "Libere seu Lado Blue", category: "Campaign", year: "2024", image: bluefitBanner3 },
+      { id: "bluefit-4", title: "Comece Agora", category: "Social Media", year: "2024", image: bluefitBanner4 },
+      { id: "bluefit-5", title: "Fitness Hero Shot", category: "Product Campaign", year: "2024", image: bluefitCover },
+      { id: "bluefit-6", title: "Membership Campaign", category: "Social Media", year: "2024", image: bluefitImage2 },
+      { id: "bluefit-7", title: "Fitness Lifestyle", category: "Campaign Asset", year: "2024", image: bluefitImage6 },
+      { id: "bluefit-8", title: "Athletic Performance", category: "Sports Campaign", year: "2024", image: bluefitBannerCopy2 },
+      { id: "bluefit-9", title: "Empowerment Campaign", category: "Social Impact", year: "2024", image: bluefitBannerCopy },
+      { id: "bluefit-10", title: "Motivation Series", category: "Digital Campaign", year: "2024", image: bluefitBanner6 },
     ]
   },
   {
