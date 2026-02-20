@@ -7,7 +7,6 @@ import betmgmOlympus from "@assets/betmgm_extracted/Gates of Olympus_KV 2_1280x7
 import betmgmGoldBlitz from "@assets/betmgm_extracted/Gold Blitz Fortunes_KV1_160x600.png";
 import betmgmKv1 from "@assets/betmgm_extracted/KV1_1080x1920.png";
 import betmgmKv2 from "@assets/betmgm_extracted/KV2_1080x1920.png";
-import betmgmVegas from "@assets/betmgm_extracted/KV_BF_Vegas Friday.png";
 import betmgmViraLata from "@assets/betmgm_extracted/Vira lata caramelo_KV2_160x600.png";
 import betmgmDivirta from "@assets/KV1_1766113599926.png";
 import betmgmMilionario from "@assets/KV2_1766113599926.png";
@@ -126,14 +125,13 @@ export const CLIENTS: Client[] = [
     id: "betmgm",
     name: "BetMGM",
     descriptionKey: "client.betmgm",
-    coverImage: betmgmVegas,
+    coverImage: betmgmLibertadores1,
     projects: [
       { id: "betmgm-1", title: "Libertadores KV", category: "Key Visual", year: "2024", image: betmgmLibertadores1 },
       { id: "betmgm-2", title: "Gates of Olympus", category: "Game Promotion", year: "2024", image: betmgmOlympus },
       { id: "betmgm-3", title: "Campaign KV 1", category: "Social Media", year: "2024", image: betmgmKv1 },
       { id: "betmgm-4", title: "Libertadores Social", category: "Social Media", year: "2024", image: betmgmLibertadores2 },
       { id: "betmgm-5", title: "Fortune Tiger", category: "Game Asset", year: "2024", image: betmgmFortune },
-      { id: "betmgm-6", title: "Vegas Friday", category: "Campaign", year: "2024", image: betmgmVegas },
       { id: "betmgm-7", title: "Campaign KV 2", category: "Social Media", year: "2024", image: betmgmKv2 },
       { id: "betmgm-8", title: "Vira Lata Caramelo", category: "Banner Ads", year: "2024", image: betmgmViraLata },
       { id: "betmgm-9", title: "Gold Blitz", category: "Banner Ads", year: "2024", image: betmgmGoldBlitz },
